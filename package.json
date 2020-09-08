@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Stack-overflow-lite MERN-Stack version ",
+  "main": "server.js",
+  "scripts": {
+    "test": " npx jasmine",
+    "server": "nodemon server.js --exec babel-node -- "
+  },
+  "author": "Majeed Shuaib",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.10.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
+    "jasmine": "^3.5.0",
+    "nodemon": "^2.0.4",
+    "passport-mock-strategy": "^2.0.0",
+    "supertest": "^4.0.2"
+  }
+}
