@@ -1,1 +1,1 @@
-web: nodemon server.js --exec babel-node -- 
+web: node server.js --exec babel-node -- 
