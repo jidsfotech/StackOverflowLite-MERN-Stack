@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": " npx jasmine",
-    "server": "nodemon server.js --exec babel-node -- "
+    "client":"npm start --prefix client",
+    "server": "nodemon server.js --exec babel-node -- ",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Majeed Shuaib",
   "license": "ISC",
@@ -33,5 +35,8 @@
     "nodemon": "^2.0.4",
     "passport-mock-strategy": "^2.0.0",
     "supertest": "^4.0.2"
+  },
+  "engines": {
+    "node":"12.14.0"
   }
 }
