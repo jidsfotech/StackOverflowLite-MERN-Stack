@@ -4,7 +4,7 @@
   "description": "Stack-overflow-lite MERN-Stack version ",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js --exec babel-node -- ",
+    "start": "node server.js",
     "test": " npx jasmine",
     "server": "nodemon server.js --exec babel-node -- ",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
