@@ -7,6 +7,7 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
+
 //connect to mongoose 
 mongoose.connect(devDB)
     .then(() => console.log("Connected to Stackoverflow-lite database sucessfully"))
