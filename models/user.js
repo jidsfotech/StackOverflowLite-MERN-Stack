@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import Question from '../models/question'
+const mongoose = require ('mongoose');
+const Question = require ('../models/question');
 const Schema = mongoose.Schema;
 
 mongoose.set('useCreateIndex', true);

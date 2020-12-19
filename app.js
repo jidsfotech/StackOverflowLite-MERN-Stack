@@ -1,10 +1,10 @@
 
-import express from 'express';
-import bodyparser from 'body-parser';
-import passport from 'passport';
-import userRoutes from './routes/api/user';
-import questionsRoutes from './routes/api/question';
-import path from 'path'
+const express  = require ('express');
+const bodyparser = require ('body-parser');
+const passport = require ('passport');
+const userRoutes = require ('./routes/api/user');
+const questionsRoutes = require ('./routes/api/question');
+const path = require ('path');
 
 const app = express();
 

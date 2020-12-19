@@ -1,5 +1,5 @@
-import answerHandler from '../handlers/answerHndler'
-import dbSetup from '../spec/dbSetup';
+const answerHandler = rquire ('../handlers/answerHndler');
+const dbSetup = require ('../spec/dbSetup');
  // Answers routes testing 
 describe('API post(question/question_id/answer) --> ', () => {
 

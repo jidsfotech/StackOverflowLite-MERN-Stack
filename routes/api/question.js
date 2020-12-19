@@ -1,16 +1,14 @@
 
-import express from 'express';
-import passport from 'passport';
-import Question from '../../models/question';
-import Answer from '../../models/answer'
-import Comment from '../../models/comment';
-import User from '../../models/user';
-import {
-    validateQuestionInput,
-} from '../../validation/validate_question_answer';
-import answerHandler from '../../handlers/answerHndler';
-import commentHandler from '../../handlers/commentHandler';
-import isEmpty from 'is-empty';
+const express = require( 'express');
+const passport = require('passport') ;
+const Question = require ('../../models/question');
+const Answer = require ('../../models/answer');
+const  Comment = require ('../../models/comment');
+const  User = require ('../../models/user');
+const  {validateQuestionInput} = require ('../../validation/validate_question_answer');
+const answerHandler = require ('../../handlers/answerHndler');
+const commentHandler = require  ('../../handlers/commentHandler');
+const isEmpty = require ('is-empty');
 
 const router = express.Router();
 

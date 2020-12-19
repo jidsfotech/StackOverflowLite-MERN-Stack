@@ -1,6 +1,6 @@
 //import passportJWT from 'passport-jwt';
-import User from '../models/user';
-import keys from './keys';
+const  User = require ( '../models/user');
+const  keys = require ('./keys') ;
 const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const MockStrategy = require('passport-mock-strategy');

@@ -1,6 +1,6 @@
-import Question from '../models/question';
-import Comment from '../models/comment'
-import {validateCommentInput} from '../validation/validate_question_answer';
+const  Question = require ('../models/question');
+const  Comment = require ('../models/comment');
+const {validateCommentInput} = require ('../validation/validate_question_answer');
 
 var commentHandler = {
     //handles route that post comments 

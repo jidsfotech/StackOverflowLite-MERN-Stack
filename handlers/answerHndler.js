@@ -1,6 +1,6 @@
-import Question from '../models/question';
-import Answer from '../models/answer';
-import { validateAnswerInput } from '../validation/validate_question_answer'; 
+const  Question = require ('../models/question');
+const Answer = require ('../models/answer');
+const { validateAnswerInput } = require ('../validation/validate_question_answer'); 
 
 
 var answerHandler = {

@@ -1,7 +1,7 @@
-import supertest from 'supertest';
-import app from '../app';
-import { dbSetup } from './dbSetup'
-import Question from '../models/question';
+const supertest = require ('supertest');
+const app = require ('../app');
+const  { dbSetup } = require  ('./dbSetup');
+const Question = require ('../models/question');
 const request = supertest(app);
 
 //Questions routes testing 

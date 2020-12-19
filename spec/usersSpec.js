@@ -1,7 +1,7 @@
 
-import supertest from 'supertest';
-import app from '../app';
-import { dbSetup } from './dbSetup'
+const supertest = require ('supertest');
+const app = require( '../app');
+const { dbSetup } = require ('./dbSetup');
 const User = require('../models/user');
 const request = supertest(app);
 

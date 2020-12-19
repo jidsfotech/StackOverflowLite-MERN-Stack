@@ -1,7 +1,7 @@
 
-import mongoose from 'mongoose';
-import { devDB } from './config/keys';
-import app from './app';
+const mongoose = require ('mongoose');
+const { devDB } = require  ('./config/keys');
+const app = require ('./app');
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);

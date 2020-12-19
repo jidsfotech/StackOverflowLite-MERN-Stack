@@ -1,7 +1,7 @@
-import express from 'express';
+const  express = require ('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-import keys from '../../config/keys'
+const keys = require ('../../config/keys');
 const router = express.Router();
 
 // require input validation fuctions
@@ -9,7 +9,7 @@ const validateRegisterInput = require('../../validation/validateRegister');
 const validateLoginInput = require('../../validation/validateLogin');
 
 // load user model
-import User from '../../models/user';
+const  User = require ('../../models/user');
 
 // @route POST api/users/register
 // @desc Register user
