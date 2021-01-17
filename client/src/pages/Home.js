@@ -13,10 +13,10 @@ const Home = () => {
                 </div>
                 <div className="topNav-right-section">
                 <div className="login">
-                    <button>Login component goes here</button>
+                    <button>Login</button>
                 </div>
                 <div className="about">
-                    <button>About ssection</button>
+                    <button>About</button>
                 </div>
                 </div>
             </div>
