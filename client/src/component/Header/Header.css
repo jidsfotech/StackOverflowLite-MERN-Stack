@@ -1,0 +1,132 @@
+.Header {
+    width: 100%;
+    border-top: 3px solid var(--orange);
+}
+
+.topNav {
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.menu-icon-mobile,
+.search-icon-mobile,
+.sideNav {
+    display: none;
+}
+
+.brandlogo {
+    color:  var(--orange);
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.topNav-right-section {
+    width: 20rem;
+}
+
+.topNav-right-section button {
+    color: var(--blue-900);
+    background: var(--blue-100);
+    width: 5rem;
+    height: 2rem;
+    border: 1px solid  var(--blue-900);
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.topNav-right-section .about,
+.topNav-right-section .login-btn  {
+    display: inline-block;
+    vertical-align: top;
+    width: 6rem;
+    text-shadow: 0 1px 0 #fff;
+}
+
+/** Media query for tablets */
+@media screen and (max-width: 1024px) {
+    .topNav {
+        margin-left: 15px;
+    }
+
+    .brandlogo {
+        font-size: 13px;
+    }
+    
+    .topNav-right-section {
+        width: 12rem;
+    }
+}
+
+/** Media query for smartphones**/
+@media screen and (max-width: 480px) {
+    .topNav {
+        height: 3rem;
+        margin-left: 0px;
+    }
+
+    .menu-icon-mobile {
+        display: block;
+        font-size: 2rem;
+    }
+
+.sideNav{
+    display: block;
+    width: 70%;
+    position: fixed;
+    top: 3.5rem;
+    transition: 840ms;
+}
+
+.sideNav ul{
+    float: left;
+    margin: 5px 0  0 10px;
+}
+    
+.sideNav.hidden {
+    display: none;
+}
+
+    .brandlogo {
+        font-size: 15px;
+    }
+
+    .search-box-mobile {
+        background: var(--black-200);
+        padding: 7px;
+    }
+
+    .topNav-right-section {
+        width: 9.5rem;
+        height: 3rem;
+    }
+.s_icon-forMobile{
+    margin-top: 10px;
+
+}
+    .search-icon-mobile {
+        height: 2.8rem;
+        width: 2rem;
+        display: inline-block;
+        font-size: 1.3rem;
+        cursor: pointer;
+        color: var( --black-400);
+        padding: 3px;
+    }
+
+    .topNav-right-section button {
+        width: 3rem;
+    }
+
+    .topNav-right-section .about,
+    .topNav-right-section .login-btn  {
+        width: 3.5rem;
+        margin-top: 10px;
+    }
+}
+
+
+
