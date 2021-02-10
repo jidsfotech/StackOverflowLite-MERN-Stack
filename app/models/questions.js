@@ -5,7 +5,7 @@ mongoose.set('useCreateIndex', true);
 const questionSchema = new Schema({
 
     // one-to-one relationship with user schema ==> user_id
-    _author: { type: Schema.Types.ObjectId, ref:'user'},
+    _author: { type: Schema.Types.ObjectId, ref:'users'},
     question_title: { type: String },
     question_body: { type: String },
     date: { type: Date, default: Date.now },
@@ -20,7 +20,7 @@ const questionSchema = new Schema({
     // one-to-many relationship with comment schema ==> comment_id
     comments:[{
          type: Schema.Types.ObjectId, 
-         ref: 'comment'
+         ref: 'comments'
         }],
 
     meta: {
@@ -28,8 +28,8 @@ const questionSchema = new Schema({
         no_of_answers:{type: Number}
     },
 },
-    { collection: 'question' }
+    { collection: 'questions' }
 );
 
 questionSchema.index({question_title: 'text'}, {question_tags: 'text'});
-module.exports = mongoose.model('question', questionSchema);
+module.exports = mongoose.model('questions', questionSchema);

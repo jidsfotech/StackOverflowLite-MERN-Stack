@@ -4,7 +4,7 @@ mongoose.set('useCreateIndex', true);
 
 const answersSchema = new Schema({
     //  one-to-one relationship with user schema ==> user_id
-    _author: {type: Schema.Types.ObjectId, ref:'user' },
+    _author: {type: Schema.Types.ObjectId, ref:'users' },
 
     answer_body: { type: String },
     date: { type: Date, default: Date.now },
@@ -14,7 +14,7 @@ const answersSchema = new Schema({
     },
 
     // one-to-one relationship with question schema ==> question_id
-    question_id: {type: Schema.Types.ObjectId, ref:'question' },
+    question_id: {type: Schema.Types.ObjectId, ref:'questions' },
 },
     { collection: 'answers' }
 );
