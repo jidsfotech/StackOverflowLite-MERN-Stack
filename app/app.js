@@ -2,7 +2,7 @@
 const express  = require ('express');
 const bodyparser = require ('body-parser');
 const passport = require ('passport');
-const usersRoutes = require ('./routes/Users');
+const usersRoutes = require ('./routes/users');
 const questionsRoutes = require ('./routes/Question');
 const path = require ('path');
 
