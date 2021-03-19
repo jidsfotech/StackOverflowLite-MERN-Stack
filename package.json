@@ -4,7 +4,7 @@
   "description": "Stack-overflow-lite MERN-Stack version ",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js ",
+    "start": "node server.js && npm start --prefix client",
     "test": " npx jasmine",
     "server": "nodemon server.js ",
     "dev": "cross-env NODE_ENV=test concurrently \"npm run server\" \"npm start --prefix client\"",
