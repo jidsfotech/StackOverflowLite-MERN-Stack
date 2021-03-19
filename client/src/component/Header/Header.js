@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
-import {HiX} from "react-icons/hi";
-import {
-    RiMenu4Fill
-} from "react-icons/ri";
-import Login from "../Login/Login"
+import { HiX } from "react-icons/hi";
+import {RiMenu4Fill } from "react-icons/ri";
+import {LoginForm} from "../Auth/SignupLoginForm";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Header = () => {
@@ -30,53 +28,58 @@ const Header = () => {
     const toggle_searchBar_OnMobile = () => {
         if (!showSearch_OnMobile) {
             setShowSearch_OnMobile(true);
-            document.getElementById("search-icon-mobile").style.background = "#ecf2f8";
-            document.getElementById("search-icon-mobile").style.color = "#0c0d0e";
+            document.getElementById("smtphone-search-icon").style.background = "#ecf2f8";
+            document.getElementById("smtphone-search-icon").style.color = "#0c0d0e";
         }
 
         if (showSearch_OnMobile) {
-            document.getElementById("search-icon-mobile").style.background = "white";
             setShowSearch_OnMobile(!showSearch_OnMobile);
+            document.getElementById("smtphone-search-icon").style.background = "#fafafb";
         }
     }
 
-    const toggleSideNav = () => {setShowSideNav(!showSideNav)}
+    const toggleSideNav = () => { setShowSideNav(!showSideNav) }
 
     return (
-        <div className="Header">
-            <nav className="topNav">
+        <header className="Header top-bar _fixed">
+            <div className="menu-bar" role="menubar">
                 <div className="menu-icon-mobile" onClick={toggleSideNav}>
-                    {showSideNav ? <HiX /> : <RiMenu4Fill className="SideIcons"/>}
+                    {showSideNav ? <HiX /> : <RiMenu4Fill className="SideIcons" />}
                 </div>
-                <Link className="brandlogo links" to="/">
+                <Link className="brandlogo links" to="/" role="button">
                     Stackoverflow-Lite
                 </Link>
+                <ol className="menu-bar-items menulinks" role="presentation">
+                    <li className="bar-item about">About</li>
+                    <li className="bar-item products">Products</li>
+                    <li className="bar-item team">Team</li>
+                </ol>
                 < SearchBar />
-                <div className="topNav-right-section">
-                    <div id="search-icon-mobile" className="search-icon-mobile" onClick={toggle_searchBar_OnMobile}>
+                <ol className="menu-bar-items menubtns" role="auth-btn">
+                    <li id="smtphone-search-icon" className="smtphone-search-icon" onClick={toggle_searchBar_OnMobile}>
                         <BsSearch className="s_icon-forMobile" />
-                    </div>
-                    <div className="login-btn">
-                        <button onClick={toggleLogin} >Login</button>
-                    </div>
-                    {showLogin ? <Login /> : null}
-                    <div className="about">
-                        <button>About</button>
-                    </div>
-                </div>
-            </nav>
-            { showSearch_OnMobile ?<div className="search-box-mobile"> <SearchBar showSearch_OnMobile={showSearch_OnMobile}/></div> : null }
+                    </li>
+                    <li className="bar-item login-btn custom-btn">
+                        <Link onClick={toggleLogin} className="links" role="button"> Login </Link>
+                    </li>
+                    {showLogin ? <LoginForm /> : null}
+                    <li className="bar-item register-btn custom-btn">
+                        <Link className="links" to="/authenticate" role="button"> register </Link>
+                    </li>
+                </ol>
+            </div>
+            {showSearch_OnMobile ? <div className="smtphone-searchbar"><SearchBar showSearch_OnMobile={showSearch_OnMobile} /></div> : null}
 
             {/**<! Side navbar on mobile device */}
 
-            <aside className={showSideNav ? "sideNav":"sideNav hidden" }>
-                <ul> 
+            <aside className={showSideNav ? "sideNav" : "sideNav hidden"}>
+                <ul>
                     <li>home</li>
                     <li>logout</li>
                 </ul>
             </aside>
-        </div>
+        </header>
     );
-        }
-        
-        export default Header;
+}
+
+export default Header;

@@ -3,23 +3,12 @@ const Answer = require('../models/answers');
 const isEmpty = require("is-empty");
 const User = require("../models/users");
 const Comment = require('../models/comments');
-const { validateCommentInput, validateQuestionInput, validateAnswerInput } = require('../validations/validate_question_answer');
 
 class Questions {
     constructor() { }
 
     async askQuestion(payload) {
         return new Promise(async (resolve, request) => {
-
-            // validate user input
-            const { errors, isValid } = validateQuestionInput(payload)
-
-            //check validation
-            if (!isValid) {
-                reject(errors);
-                console.log(errors)
-            } else {
-                // create a new question 
                 const question = new Question({
                     _author: payload.author,
                     question_title: payload.title,
@@ -46,13 +35,12 @@ class Questions {
                         resolve(question);
                     })
                     .catch((error) => {
-                        console.log('FaiLure!!!.... Unable to save question in database..' + err)
+                        console.log('FaiLure!!!.... Unable to save question in database..' + error)
                         return reject({
                             status: false,
                             Error: error
                         }); //return error if unable to save question
                     });
-            }
         })
     }
 
@@ -116,15 +104,6 @@ class Questions {
 
     async answerQuestion(payload) {
         return new Promise(async (resolve, reject) => {
-            // validate user input
-            console.log("validating answer input")
-            const { errors, isValid } = validateAnswerInput(payload.body)
-
-            //check validation
-            if (!isValid) {
-                reject({ answer: 'Answer field can not be empty' });
-                console.log(errors);
-            } else {
                 // create a new answer 
                 const answer = new Answer({
                     _author: payload.body.author,
@@ -172,21 +151,11 @@ class Questions {
                             Error: error
                         })
                     })
-            }
         });
     }
 
     async commentOnQuestion(payload) {
         return new Promise(async (resolve, reject) => {
-            // validate user input
-            console.log("validating comment input")
-            const { errors, isValid } = validateCommentInput(payload.body)
-
-            //check validation
-            if (!isValid) {
-                reject({ Comment: 'Comment field can not be empty' });
-                console.log(errors);
-            } else {
                 // create a new answer 
                 const comment = new Comment({
                     _author: payload.body.author,
@@ -238,7 +207,6 @@ class Questions {
                             Error: error
                         })
                     })
-            }
         });
     }
 

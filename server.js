@@ -6,7 +6,9 @@ const config = require('./config/config');
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
+mongoose.set('useUnifiedTopology', true); 
+
+// setting database url base on current node enviroment
 const db =  process.env.NODE_ENV === "test" ? config.mongo.devHost : config.mongo.host; 
 
 //connect to mongoose 

@@ -1,60 +1,75 @@
-.searchBox-onMobile{
+.searchbar-4smtphone {
     display: none;
 }
 
-.navBar-searchBox {
-    border: 1px solid var(--black-300);
-    border-radius: 5px;
-    padding: 5px;
+.searchbar {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    border-radius: 3px;
+    border: 1px solid var(--black-200);
+    flex-grow: 1;
+    background: var(--white);
 }
 
-.navBar-searchBox:hover,
-.navBar-searchBox:focus {
-    border: 2px solid var(--blue-200);
+.searchbar .ps--relative {
+    display: flex;
+}
+
+ .searchbar .s-input {
+    box-shadow: none;
+    color: var(--black-700);
+    width: 100%;
+    border: 1px solid var(--white);
+    border-radius: 3px;   
+}
+
+.searchbar:hover, .searchbar:focus {
+    border: 1px solid var(--blue-200);
+    box-shadow: 0 0 5px var(--blue-400);
 }
 
 .s_icon {
-    display: inline-block;
-    height: 18px;
-    width: 35px;
-    cursor: pointer;
-    color: var( --black-400);
-}
-
-.navBar-searchBox input {
-    height: 18px;
-    width: 30rem;
-    border: none;
+    color: var(--black-300);
+    vertical-align: bottom;
+    padding: .4em .4em;
+    pointer-events: none;
 }
 
 /** Media query for tablets */
+
 @media screen and (max-width: 1024px) {
-    .navBar-searchBox input {
-        width: 15rem;
+    .searchbar {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .searchbar .s-input {
+        border: var(--white);
     }
 }
 
 /** Media query for smartphones**/
+
 @media screen and (max-width: 480px) {
-    .navBar-searchBox {
-       display: none;
+    .searchbar {
+        display: none;
     }
 
-    .searchBox-onMobile {
+    .searchbar-4smtphone {
         display: inline-block;
-        background: var(--white);
-        border: 2px solid var(--blue-200);
         border-radius: 5px;
-        padding: 4px;
+        border-radius: 3px;
+        border: 1px solid var(--black-200);
+        width: 22rem;
      }
     
-     .searchBox-onMobile input {
-        border: 2px solid var(--blue-200);
-        border: none;
-        width: 290px;
+     .searchbar-4smtphone .ps--relative {
+        display: flex;
+    }
+    
+    .searchbar-4smtphone input {
+        border: var(--white);
+        width: 100%;
      }
-
-
-
 }
 

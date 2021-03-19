@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const userController = require("../controllers/users");
-
-// require input validation fuctions
-const validateRegisterInput = require('../validations/validateRegister');
-const validateLoginInput = require('../validations/validateLogin');
-
+const validationSchema  = require("../validations/validator");
+const validate = require("../lib/express-joi-validator");
 
 
 //Health route
@@ -19,31 +16,20 @@ router.get("/", (req, res) => {
 // @route /register
 // @desc Create  user
 // @access Public
-router.post("/user/register", (req, res) => {
-  // data validation
-  const { errors, isValid } = validateRegisterInput(req.body);
-
-  // Check validation
-  if (!isValid) {
-    return res.status(400).json({ errors });
-  }
-   new userController().create(req, res);
-});
+router.post(
+  "/user/register", 
+  validate(validationSchema.userRegistration),
+  (req, res) => new userController().create(req, res)
+  );
 
 // @route /login
 // @desc Login user and return JWT token
 // @access Public
-router.post("/user/login", (req, res) => {
-
-  // Form validation
-  const { errors, isValid } = validateLoginInput(req.body);
-
-  // Check validation
-  if (!isValid) {
-    return res.status(400).json({ errors });
-  }
-  new userController().login(req, res);
-});
+router.post(
+  "/user/login", 
+  validate(validationSchema.userLogin ),
+  (req, res) => new userController().login(req, res)
+);
 
 
 router.get('/getAll', (req, res) => {
