@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "client/build")))
 
 // serve the React app index page if no API route is hit
 app.use(function(req, res) {
-	res.sendFile(path.join(__dirname, '../client/build/index.html'));
+	res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
 
 app.use(usersRoutes);
