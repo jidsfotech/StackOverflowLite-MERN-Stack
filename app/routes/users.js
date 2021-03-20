@@ -5,6 +5,14 @@ const validationSchema  = require("../validations/validator");
 const validate = require("../lib/express-joi-validator");
 
 
+//Health route
+router.get("/", (req, res) => {
+  res.json({
+    status: "Healthy",
+    message: "Stackoverflow-lite Service up and running"
+  });
+});
+
 // @route /register
 // @desc Create  user
 // @access Public
