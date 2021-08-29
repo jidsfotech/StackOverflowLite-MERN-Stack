@@ -15,10 +15,10 @@ app.use(passport.initialize());
 require('../config/passport')(passport);
 
 // serve static files from the React app
-app.use(express.static(path.join(__dirname, "../client/build")))
+//app.use(express.static(path.join(__dirname, "../client/build")))
 
 // serve the React app index page if no API route is hit
-/*app.use(function(req, res) {
+/**app.use(function(req, res) {
     //res.send( path.join(__dirname, '../client/build/index.html'))
 	res.sendFile(path.join(__dirname, "../client/build/", "index.html"));
 });*/
