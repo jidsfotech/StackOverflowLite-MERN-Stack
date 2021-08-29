@@ -23,6 +23,10 @@ app.use(function(req, res) {
 	res.sendFile(path.join(__dirname, "../client/build/", "index.html"));
 });
 
+app.get("/health", (req, res) => {                 
+    res.status(200).send("Stackoverflow_Lite up and running");
+})
+
 app.use(usersRoutes);
 app.use(questionsRoutes);
 
