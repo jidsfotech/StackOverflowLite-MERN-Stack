@@ -17,5 +17,5 @@ mongoose.connect(db)
     .catch(err => console.log(err));
 
 const port = config.app.port
-app.listen(port, () => console.log(`Server up and running on http://localhost:${port}`));
+app.listen(port, () => console.log(`Server up and running on port: ${port}`));
  
