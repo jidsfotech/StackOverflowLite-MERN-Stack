@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, "client/build")))
 app.use('/api', userRoutes);
 app.use('/api', questionsRoutes);
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.status(200).send("Welcome To Stackoverflow Lite");
 })
 
