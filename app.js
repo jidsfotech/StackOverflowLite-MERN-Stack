@@ -24,9 +24,9 @@ app.get('/api', (req, res) => {
     res.status(200).send("Welcome To Stackoverflow Lite");
 })
 
-app.use((req, res) => {                 
+/**app.use((req, res) => {                 
     res.status(400).send("Bad request Resources not found");
-});
+});*/
 
 module.exports = app
 
