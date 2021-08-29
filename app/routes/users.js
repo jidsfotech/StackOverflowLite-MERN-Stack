@@ -18,9 +18,8 @@ router.get("/", (req, res) => {
 // @access Public
 router.post(
   "/user/register", 
-  //validate(validationSchema.userRegistration),
-  //(req, res) => new userController().create(req, res)
-  (req, res) => console.log(req.body)
+  validate(validationSchema.userRegistration),
+  (req, res) => new userController().create(req, res)
   );
 
 // @route /login
@@ -28,8 +27,9 @@ router.post(
 // @access Public
 router.post(
   "/user/login", 
-  validate(validationSchema.userLogin ),
-  (req, res) => new userController().login(req, res)
+  /**validate(validationSchema.userLogin ),
+  (req, res) => new userController().login(req, res)*/
+  (req, res) => console.log(req.body)
 );
 
 
