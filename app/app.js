@@ -18,10 +18,10 @@ require('../config/passport')(passport);
 app.use(express.static(path.join(__dirname, "../client/build")))
 
 // serve the React app index page if no API route is hit
-app.use(function(req, res) {
+/*app.use(function(req, res) {
     //res.send( path.join(__dirname, '../client/build/index.html'))
 	res.sendFile(path.join(__dirname, "../client/build/", "index.html"));
-});
+});*/
 
 app.get("/health", (req, res) => {                 
     res.status(200).send("Stackoverflow_Lite up and running");
