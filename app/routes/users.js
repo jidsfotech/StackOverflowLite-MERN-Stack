@@ -18,8 +18,9 @@ router.get("/", (req, res) => {
 // @access Public
 router.post(
   "/user/register", 
-  validate(validationSchema.userRegistration),
-  (req, res) => new userController().create(req, res)
+  console.log(req.body)
+  /**validate(validationSchema.userRegistration),
+  (req, res) => new userController().create(req, res)*/
   );
 
 // @route /login
