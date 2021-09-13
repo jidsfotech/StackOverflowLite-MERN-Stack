@@ -10,10 +10,10 @@ module.exports = function (schema) {
       // Validate req.params
       if (Object.keys(req.params).length !== 0) {
         //validation = joi.validate(req.params || {}, schema)
-        validation = await schema.validateParams.validate(req.params || {});
+        validation = await schema.validate(req.params || {});
 
         if (validation.error) {
-          return res.status(400).send({ status: validation.error.name, errors: validation.error.details, majeed:"im throwing the error"});
+          return res.status(400).send({ status: validation.error.name, errors: validation.error.details, majeed: "im throwing the error" });
         }
 
         // Set defaults
@@ -23,11 +23,11 @@ module.exports = function (schema) {
 
       // Validate req.body
       if (Object.keys(req.body).length !== 0) {
-        validation = await schema.validateBody.validate(req.body || {});
+        validation = await schema.validate(req.body || {});
         // validation = Joi.validate(req.body || {}, schema); 
 
         if (validation.error) {
-          return res.status(400).send({ status: validation.error.name, errors: validation.error.details});
+          return res.status(400).send({ status: validation.error.name, errors: validation.error.details });
         }
 
         // Set defaults
@@ -36,7 +36,7 @@ module.exports = function (schema) {
 
       // Validate req.query
       if (Object.keys(req.query).length !== 0) {
-        validation = await schema.queryString.validate(req.query || {});
+        validation = await schema.validate(req.query || {});
         //validation = joi.validate(req.query || {}, req.route.validations.query);
 
         if (validation.error) {
