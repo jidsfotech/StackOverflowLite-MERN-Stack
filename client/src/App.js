@@ -6,7 +6,8 @@ import {
   Route, 
   Switch, 
   Redirect } from 'react-router-dom';
-  import Home from './pages/Home'
+  import AllQuestions from './pages/AllQuestions';
+  import SignUp_Login from './pages/SignUp-Login/SignUp-Login';
 
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
     <div className="App">
     {/**Route setup */}
     <Router>
-      <switch>
-        <Route path="/" exact component = {Home} />
-      </switch>
+      <Switch>
+        <Route path="/" exact component = {AllQuestions} />
+        <Route path="/authenticate" exact component = {SignUp_Login} />
+      </Switch>
     </Router>
     </div>
   );

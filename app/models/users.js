@@ -1,5 +1,5 @@
 const mongoose = require ('mongoose');
-const Question = require ('../models/question');
+const Question = require ('./questions');
 const Schema = mongoose.Schema;
 
 mongoose.set('useCreateIndex', true);
@@ -14,10 +14,10 @@ const UserSchema = new Schema({
     // one-to-many relationship with question schema
     questions:[{
         type: Schema.Types.ObjectId,
-        ref: 'question'
+        ref: 'questions'
     }]
 },
-    { collection: 'user' }
+    { collection: 'users' }
 );
 
-module.exports = mongoose.model('user', UserSchema);
+module.exports = mongoose.model('users', UserSchema);
