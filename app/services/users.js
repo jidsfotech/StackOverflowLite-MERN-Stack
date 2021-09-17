@@ -87,7 +87,7 @@ class User {
                 //if user already exist but not yet verified, resend a new verification token 
                 if (user && !user.isVerified) {
                     //send a new verification code the user 
-                    this.retryUserAccountVerification(email);
+                    this.retryUserAccountVerification(user.email).then(code => console.log(code));
                     return reject({
                         status: false,
                         user: user.verificationCode,
@@ -98,13 +98,13 @@ class User {
                 // Check password
                 console.log(password, user.password)
                 bcrypt.compare(password, user.password)
-                .then(isMatch => {
-                    if (!isMatch) {
-                        return reject({
-                            status: "false",
-                            message: "wromg password entered"
-                        });
-                    }
+                    .then(isMatch => {
+                        if (!isMatch) {
+                            return reject({
+                                status: "false",
+                                message: "wromg password entered"
+                            });
+                        }
                         // If User matched create a JWT Payload
                         const payload = {
                             id: user.id,
@@ -125,7 +125,7 @@ class User {
                                 });
                             }
                         );
-                });
+                    });
             });
         });
 
@@ -150,7 +150,7 @@ class User {
                         if (user.verificationCode !== code || moment(expiryDate).isBefore(currentTime)) {
 
                             //send a new verification code the user 
-                            this.retryUserAccountVerification(user.email);
+                            this.retryUserAccountVerification(user.email).then(code => console.log(code));
                             return reject({
                                 Message: "verification code has expired, a new verification link has been sent to you",
                                 user_id: userId
@@ -195,11 +195,10 @@ class User {
     async retryUserAccountVerification(email) {
         return new Promise(async (resolve, reject) => {
             const code = utils.generateVerificationCode();
-            console.log(email)
+            console.log("CALLED HURAY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             await UserModel.findOne({ email })
                 .then(async (user) => {
                     if (user) {
-                        console.log(user.verificationCode, code)
                         await UserModel.updateOne({ email: email }, { verificationCode: code })
                             .then((res) => {
                                 //send a new verification link to the user
@@ -217,12 +216,12 @@ class User {
                     // if no user id matchs the query parameter reject
                     return reject("User does not exist");
                 })
-                /**.catch(error => {
-                    reject({
-                        Message: "Error occured while searching for a user",
-                        Error: error
-                    })
-                })*/
+            /**.catch(error => {
+                reject({
+                    Message: "Error occured while searching for a user",
+                    Error: error
+                })
+            })*/
         });
     };
 
@@ -257,7 +256,7 @@ class User {
                                     return reject("wrong old password")
                                 }
                                 delete data.oldPassword;
-                                data.password = data.newPassword;                                delete data.oldPassword;
+                                data.password = data.newPassword; delete data.oldPassword;
                                 delete data.newPassword;
                             })
                             .catch((error) => {
@@ -267,24 +266,24 @@ class User {
                                 })
                             })
                     }
-                        await UserModel.updateOne({ _id: userId }, data)
-                            .then((user) => {
-                                /**
-                                 * send email notification after succesfull update here 
-                                 * *************************************************
-                                 * ************************************************
-                                 */
-                                return resolve({
-                                    status: "User data successfully updated",
-                                    user: user
-                                })
+                    await UserModel.updateOne({ _id: userId }, data)
+                        .then((user) => {
+                            /**
+                             * send email notification after succesfull update here 
+                             * *************************************************
+                             * ************************************************
+                             */
+                            return resolve({
+                                status: "User data successfully updated",
+                                user: user
                             })
-                            .catch((error) => {
-                                return reject({
-                                    status: "Fail to update user data",
-                                    Error: error
-                                })
-                            });
+                        })
+                        .catch((error) => {
+                            return reject({
+                                status: "Fail to update user data",
+                                Error: error
+                            })
+                        });
                 })
         })
     }

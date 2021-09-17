@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 
 const generateVerificationCode = () => {
     const randomUniqueDigits = Math.floor(80000 + Math.random() * 70000);
-    const expire = moment(new Date()).add(12, 'hours').format('YYYY-MM-DD HH:MM:SS');
+    const expire = moment(new Date()).add(24, 'hours').format('YYYY-MM-DD HH:MM:SS');
     const code = `${randomUniqueDigits}|${expire}|${randomUniqueDigits}`;
     return code
 }
