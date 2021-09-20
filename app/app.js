@@ -31,5 +31,10 @@ app.use((req, res) => {
     res.status(400).send("Bad request Resources not found");
 });
 
+/*This keeps your server running and also give you a place to attach the debugger and look for a deeper problem.
+process.on('uncaughtException', function (err) {
+    console.log(err);
+});*/
+
 module.exports = app
 

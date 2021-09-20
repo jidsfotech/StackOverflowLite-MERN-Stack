@@ -87,45 +87,43 @@ class User {
                 //if user already exist but not yet verified, resend a new verification token 
                 if (user && !user.isVerified) {
                     //send a new verification code the user 
-                    this.retryUserAccountVerification(user.email).then(code => console.log(code));
-                    return reject({
-                        status: false,
-                        user: user.verificationCode,
-                        id: user._id,
-                        message: "User not yet verified, new verification code has been sent to you plase try again"
-                    })
-                }
-                // Check password
-                console.log(password, user.password)
-                bcrypt.compare(password, user.password)
-                    .then(isMatch => {
-                        if (!isMatch) {
-                            return reject({
-                                status: "false",
-                                message: "wromg password entered"
-                            });
-                        }
-                        // If User matched create a JWT Payload
-                        const payload = {
-                            id: user.id,
-                            name: user.userName
-                        };
-                        // generate a Sign token
-                        jwt.sign(
-                            payload,
-                            config.secretOrKey,
-                            {
-                                expiresIn: 31556926 // 1 year in seconds
-                            },
-                            (err, token) => {
-                                //localStorage.setItem({user: payload})
-                                return resolve({
-                                    status: "Successfull",
-                                    token: "Bearer " + token
+                    this.retryUserAccountVerification(user.email)
+                        .then(code => {
+                            code.isVerified = false;
+                            return reject(code);
+                        })
+                } else {
+                    // Check password
+                    bcrypt.compare(password, user.password)
+                        .then(isMatch => {
+                            if (!isMatch) {
+                                return reject({
+                                    status: "false",
+                                    message: "wromg password entered"
                                 });
                             }
-                        );
-                    });
+                            // If User matched create a JWT Payload
+                            const payload = {
+                                id: user.id,
+                                name: user.userName
+                            };
+                            // generate a Signed token
+                            jwt.sign(
+                                payload,
+                                config.secretOrKey,
+                                {
+                                    expiresIn: 31556926 // 1 year in seconds
+                                },
+                                (err, token) => {
+                                    //localStorage.setItem({user: payload})
+                                    return resolve({
+                                        status: "Successfull",
+                                        token: "Bearer " + token
+                                    });
+                                }
+                            );
+                        });
+                }
             });
         });
 
@@ -141,42 +139,44 @@ class User {
             const { code, userId } = payload;
             await UserModel.findById(userId)
                 .then(async (user) => {
-                    if (user) {
-
-                        //extract verification code from user object and check if it's still valid 
-                        const expiryDate = user.verificationCode.split("|")[1];
-                        const currentTime = moment(new Date()).format("YYYY-MM-DD HH:MM:SS");
-                        console.log(user.verificationCode, code)
-                        if (user.verificationCode !== code || moment(expiryDate).isBefore(currentTime)) {
-
-                            //send a new verification code the user 
-                            this.retryUserAccountVerification(user.email).then(code => console.log(code));
-                            return reject({
-                                Message: "verification code has expired, a new verification link has been sent to you",
-                                user_id: userId
-                            });
-                        }
-
-                        //verify user if not already verified  
-                        if (!user.isVerified) {
-                            await UserModel.updateOne({ _id: userId }, { isVerified: true })
-                                .then((res) => {
+                    if (!user) {
+                        // if no user id matchs the query parameter reject
+                        return reject("User does not exist");
+                    }
+                    //extract verification code from user object and check if it's still valid 
+                    //extract verification code from user object and check if it's still valid 
+                    //extract verification code from user object and check if it's still valid 
+                    const expiryDate = user.verificationCode.split("|")[1];
+                    const currentTime = moment(new Date()).format("YYYY-MM-DD HH:MM:SS");
+                    if (!user.isVerified && user.verificationCode !== code || moment(expiryDate).isBefore(currentTime)) {
+                        //send a new verification code to the user 
+                        this.retryUserAccountVerification(user.email)
+                            .then(code => {
+                                code.isVerified = false;
+                                return reject(code);
+                            })
+                    }
+                    //verify user if not already verified  
+                    //verify user if not already verified  
+                    //verify user if not already verified  
+                    else if (!user.isVerified) {
+                        await UserModel.updateOne({ _id: userId }, { isVerified: true })
+                            .then((res) => {
+                                /**send email notification to suer after verification 
                                     /**send email notification to suer after verification 
-                                     * *****************************
-                                     * *****************************
-                                     */
-                                    return resolve(res)
-                                })
-                                .catch((error) => {
-                                    return reject(error)
-                                })
-                        }
-
+                                /**send email notification to suer after verification 
+                                 * *****************************
+                                 * *****************************
+                                 */
+                                return resolve(res)
+                            })
+                            .catch((error) => {
+                                return reject(error)
+                            })
+                    }
+                    else {
                         return reject("User already verified proceed to login")
                     }
-
-                    // if no user id matchs the query parameter reject
-                    return reject("User does not exist");
                 })
                 .catch(error => {
                     reject({
@@ -195,7 +195,6 @@ class User {
     async retryUserAccountVerification(email) {
         return new Promise(async (resolve, reject) => {
             const code = utils.generateVerificationCode();
-            console.log("CALLED HURAY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             await UserModel.findOne({ email })
                 .then(async (user) => {
                     if (user) {

@@ -45,6 +45,12 @@ class Users {
                 )
             })
             .catch((error) => {
+                if (!error.isVerified) {
+                    res.send({
+                        status: httpStatus.INTERNAL_SERVER_ERROR,
+                        user_not_verified: error
+                    })
+                }
                 res.send({
                     status: httpStatus.INTERNAL_SERVER_ERROR,
                     error: error
