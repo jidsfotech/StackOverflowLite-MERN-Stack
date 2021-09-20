@@ -144,8 +144,6 @@ class User {
                         return reject("User does not exist");
                     }
                     //extract verification code from user object and check if it's still valid 
-                    //extract verification code from user object and check if it's still valid 
-                    //extract verification code from user object and check if it's still valid 
                     const expiryDate = user.verificationCode.split("|")[1];
                     const currentTime = moment(new Date()).format("YYYY-MM-DD HH:MM:SS");
                     if (!user.isVerified && user.verificationCode !== code || moment(expiryDate).isBefore(currentTime)) {
@@ -156,8 +154,7 @@ class User {
                                 return reject(code);
                             })
                     }
-                    //verify user if not already verified  
-                    //verify user if not already verified  
+
                     //verify user if not already verified  
                     else if (!user.isVerified) {
                         await UserModel.updateOne({ _id: userId }, { isVerified: true })
