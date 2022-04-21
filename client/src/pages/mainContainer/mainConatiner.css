@@ -1,0 +1,49 @@
+.main{
+    display: flex;    
+    flex-direction: column;    
+    background-color: #fff;    
+}
+
+.notify {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: 5051;
+    flex: 1 0 auto;
+}
+
+.content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.main-sidebar{
+    height: 100%;
+    width: 30vh;
+    top: 0;
+    left: 0;
+    position:fixed;
+    padding-top: 5rem;
+    border-right: 2px solid var(--black-050);
+}
+
+.main-pages{
+    color:rgb(134, 10, 10);
+    height: 100vh;
+    margin-left: 12.5rem;
+    width: 100%;
+}
+
+.footerSection{
+    background:teal;
+    color:white;
+    height: 10rem;
+    width: 10rem;
+    position: relative;
+    margin: 20px ;
+
+}

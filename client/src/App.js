@@ -6,8 +6,9 @@ import {
   Route, 
   Switch, 
   Redirect } from 'react-router-dom';
-  import AllQuestions from './pages/AllQuestions';
-  import SignUp_Login from './pages/SignUp-Login/SignUp-Login';
+  import AllQuestions from './pages/questions/AllQuestions';
+  import MainContainer from './pages/mainContainer/mainConatiner'
+  import SignUp_Login from './pages/auth/SignUp-Login';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     {/**Route setup */}
     <Router>
       <Switch>
-        <Route path="/" exact component = {AllQuestions} />
+        <Route path="/" exact component = {MainContainer} />
         <Route path="/authenticate" exact component = {SignUp_Login} />
       </Switch>
     </Router>
