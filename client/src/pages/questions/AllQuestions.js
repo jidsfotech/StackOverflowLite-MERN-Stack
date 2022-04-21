@@ -1,18 +1,18 @@
 import React from 'react';
 import './AllQuestions.css';
-import Header from "../component/Header/Header";
-import Questions from "../component/Questions/Question";
-import RecentlyAskedQuestions from "../component/RecentlyAskedQuestions/RecentlyAskedQuestion";
+import Header from "../../component/Header/Header";
+import Questions from "../../component/Questions/Question";
+import RecentlyAskedQuestions from "../../component/RecentlyAskedQuestions/RecentlyAskedQuestion";
 
 const Home = () => {
     return (
         <div className="questions-page">
-            <div className="notify-container"></div>
+            
             <Header />
             <div className="custom-header"></div>
             <div className="container">
                 <div className="left-sidebar "></div>
-                <div className="content">
+                <div className="contssent">
                     <div className="main" role="all-question">
                         <div className="main-top-grid">
                             <h1>All Questions</h1>

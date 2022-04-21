@@ -86,4 +86,16 @@ router.post(
   (req, res) => new userController().resetPassword(req, res)
 )
 
+
+// @route user/update
+// @desc update user 
+// @access private
+router.post(
+  '/user/update',
+  validate({
+    validateBody: validationSchema.retryUserVerification,
+  }),
+  (req, res) => new userController().resetPassword(req, res)
+)
+
 module.exports = router;
