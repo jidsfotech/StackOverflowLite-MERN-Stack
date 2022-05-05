@@ -38,7 +38,7 @@ module.exports = (server) => {
           });
           socket.emit('finalResult', internetSpeedTest);
         } catch (err) {
-          console.log('::: Speed Test Error :::', err.message);
+          // console.log('::: Speed Test Error :::', err.message);
         }
       });
     });
