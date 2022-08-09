@@ -22,6 +22,6 @@ mongoose.connect(db)
 const port = config.app.port
 const server = http.createServer(app);
 //setup socket.io connection
-socketIO(server);
+//socketIO(server);
 server.listen(port, () => console.log(`Server up and running on port: ${port}`));
 

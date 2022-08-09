@@ -29,6 +29,7 @@ const Home = () => {
                             </div>
                         </div>
                         <Questions />
+                        <Questions />
                     </div>
                     <div className="main-right"></div>
                 </div>
