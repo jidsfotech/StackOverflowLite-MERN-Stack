@@ -17,6 +17,8 @@ const MainContainer = () => {
                 <div className="main-pages">
                     <AllQuestions />
                 </div>
+                <div className="right-sidebar">
+                </div>
             </div>
         </div>
     )

@@ -10,9 +10,7 @@ const Home = () => {
             
             <Header />
             <div className="custom-header"></div>
-            <div className="container">
-                <div className="left-sidebar "></div>
-                <div className="contssent">
+                <div className="content">
                     <div className="main" role="all-question">
                         <div className="main-top-grid">
                             <h1>All Questions</h1>
@@ -34,7 +32,6 @@ const Home = () => {
                     <div className="main-right"></div>
                 </div>
             </div>
-        </div>
     )
 }
 

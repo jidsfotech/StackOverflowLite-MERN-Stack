@@ -30,6 +30,15 @@
     padding-top: 5rem;
     border-right: 2px solid var(--black-050);
 }
+.right-sidebar{
+    height: 100%;
+    width: 50vh;
+    top: 0;
+    right: 0;
+    position:fixed;
+    padding-top: 5rem;
+    border-left: 2px solid var(--black-050);
+}
 
 .main-pages{
     height: 100vh;
