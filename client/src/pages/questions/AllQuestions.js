@@ -24,6 +24,7 @@ const Home = () => {
                         </div>
                         <Questions />
                         <Questions />
+                        <Questions />
                     </div>
                 </div>
     )
