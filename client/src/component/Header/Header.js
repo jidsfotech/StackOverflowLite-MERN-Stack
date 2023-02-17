@@ -55,7 +55,7 @@ const Header = () => {
                     <li className="bar-item team">Team</li>
                 </ol>
                 < SearchBar />
-                <ol className="menu-bar-items menubtns" role="auth-btn">
+                <ol className="menu-bar-items menubtns" role="button">
                     <li id="smtphone-search-icon" className="smtphone-search-icon" onClick={toggle_searchBar_OnMobile}>
                         <BsSearch className="s_icon-forMobile" />
                     </li>

@@ -75,7 +75,7 @@
     position: absolute;
     top: 50px;
     display: grid;
-    grid-template-columns: auto;
+    /*grid-template-columns: auto;*/
     transition: all 1s ease-in-out;
     transition-delay: 0.9s;
     width: 50%;
@@ -85,9 +85,9 @@
 .signup {
     transition: all 0.9s ease-in-out;
     transition-delay: 0.9s;
-    grid-column: 1 / 2;
+    /*grid-column: 1 / 2;
     grid-row: 1 / 2;
-    z-index: 2;
+    z-index: 2;*/
 }
 
 .signin {

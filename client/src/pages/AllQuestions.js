@@ -2,7 +2,7 @@ import React from 'react';
 import './AllQuestions.css';
 import Header from "../component/Header/Header";
 import Questions from "../component/Questions/Question";
-import RecentlyAskedQuestions from "../component/RecentlyAskedQuestions/RecentlyAskedQuestion";
+import HotQuestions from "../component/HotQuestions/HotQuestions";
 
 const Home = () => {
     return (
@@ -13,11 +13,11 @@ const Home = () => {
             <div className="container">
                 <div className="left-sidebar "></div>
                 <div className="content">
-                    <div className="main" role="all-question">
+                    <div className="main" >
                         <div className="main-top-grid">
                             <h1>All Questions</h1>
-                            <div className="ask-question-btn" role="ask question Button">
-                                <a href="" >Ask Question</a>
+                            <div className="ask-question-btn" role="button">
+                                <a href="/home">Ask Question</a>
                             </div>
                         </div>
                         <div className="data-query">
@@ -30,7 +30,7 @@ const Home = () => {
                         </div>
                         <Questions />
                     </div>
-                    <div className="main-right"></div>
+                    <div className="main-right"><HotQuestions /></div>
                 </div>
             </div>
         </div>

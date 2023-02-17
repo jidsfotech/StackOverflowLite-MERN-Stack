@@ -7,7 +7,7 @@
     "start": "node server.js",
     "test": " npx jasmine",
     "server": "nodemon server.js",
-    "dev": "cross-env NODE_ENV=test concurrently \"npm run server\" \"npm start --prefix client\"",
+    "start:dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider NODE_ENV=test concurrently \"npm run server\" \"npm start --prefix client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "Majeed Shuaib",
