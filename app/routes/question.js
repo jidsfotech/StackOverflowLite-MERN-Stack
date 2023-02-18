@@ -11,9 +11,7 @@ const router = express.Router();
 router.post(
     '/question',
     passport.authenticate('jwt', { session: false }),
-    validate({
-        validateBody: validationSchema.question
-    }),
+    validate(validationSchema.question),
     (req, res) => new questionsController().askQuestion(req, res)
 );
 
@@ -78,7 +76,9 @@ router.delete(
 // @desc search the database for questions base on quesry string 
 router.get(
     '/search',
-    validate({queryString: validationSchema.search }),
+    validate({ 
+        validateQuery: validationSchema.search
+     }),
     (req, res) => new questionsController().search(req, res)
 );
 

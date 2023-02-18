@@ -59,9 +59,9 @@ const Header = () => {
                     <li id="smtphone-search-icon" className="smtphone-search-icon" onClick={toggle_searchBar_OnMobile}>
                         <BsSearch className="s_icon-forMobile" />
                     </li>
-                    <li className="bar-item login-btn custom-btn">
+                    {/* <li className="bar-item login-btn custom-btn">
                         <Link onClick={toggleLogin} className="links" role="button"> Login </Link>
-                    </li>
+                    </li> */}
                     {showLogin ? <LoginForm /> : null}
                     <li className="bar-item register-btn custom-btn">
                         <Link className="links" to="/authenticate" role="button"> register </Link>

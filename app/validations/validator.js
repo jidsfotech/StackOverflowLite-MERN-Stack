@@ -7,14 +7,15 @@ const userLogin = joi.object({
 });
 
 const userRegistration = joi.object({
-    name: joi.string().required(),
+    username: joi.string().required(),
     email: joi.string().required(),
     password: joi.string().required(),
     password2: joi.string().optional(),
+    profileImage: joi.string().optional()
 });
 
 const question = joi.object({
-    author:joi.objectId().required(),
+    author: joi.objectId().required(),
     title: joi.string().required(),
     question: joi.string().required(),
     tags: joi.string()
@@ -46,6 +47,32 @@ const search = joi.object({
     queryString: joi.string().required()
 });
 
+const userVerification = joi.object({
+    code: joi.string().required(),
+    userId: joi.string().required()
+});
+
+const retryUserVerification = joi.object({
+    email: joi.string().required()
+})
+
+const updateUser = joi.object({
+    username: joi.string().optional(),
+    oldPassword: joi.string().optional(),
+    newPassword: joi.string().optional(),
+    profileImage_url: joi.string().optional(),
+});
+
+const updateUserParams = joi.object({
+    userId: joi.string().required(),
+});
+
+const updatePassword = joi.object({
+    code: joi.string().required(),
+    email: joi.string().required(),
+    newPassword: joi.string().optional(),
+});
+
 module.exports = {
     userLogin,
     userRegistration,
@@ -53,4 +80,9 @@ module.exports = {
     answer,
     comment,
     search,
+    userVerification,
+    retryUserVerification,
+    updateUser,
+    updateUserParams,
+    updatePassword
 }
