@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./UserReputationScore.css"
-import profilePics from "../../img/majeed.png";
+import profilePics from "../../assets/img/majeed.png";
 
 const UserreputationScore = () => {
     return (

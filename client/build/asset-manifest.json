@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.b36c7d7c.chunk.css",
+    "main.js": "./static/js/main.bb9d9748.chunk.js",
+    "main.js.map": "./static/js/main.bb9d9748.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.95d10083.js",
+    "runtime-main.js.map": "./static/js/runtime-main.95d10083.js.map",
+    "static/js/2.bde0edca.chunk.js": "./static/js/2.bde0edca.chunk.js",
+    "static/js/2.bde0edca.chunk.js.map": "./static/js/2.bde0edca.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.c628f3a9abe60a4d83f52e20d3280f36.js": "./precache-manifest.c628f3a9abe60a4d83f52e20d3280f36.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.b36c7d7c.chunk.css.map": "./static/css/main.b36c7d7c.chunk.css.map",
+    "static/js/2.bde0edca.chunk.js.LICENSE.txt": "./static/js/2.bde0edca.chunk.js.LICENSE.txt",
+    "static/media/log.svg": "./static/media/log.797bb368.svg",
+    "static/media/majeed.png": "./static/media/majeed.7da90da4.png",
+    "static/media/register.svg": "./static/media/register.993f7d29.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95d10083.js",
+    "static/js/2.bde0edca.chunk.js",
+    "static/css/main.b36c7d7c.chunk.css",
+    "static/js/main.bb9d9748.chunk.js"
+  ]
+}

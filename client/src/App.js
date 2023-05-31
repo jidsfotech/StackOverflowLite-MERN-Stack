@@ -1,24 +1,26 @@
 import React from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Routes,
 } from 'react-router-dom';
-import AllQuestions from './pages/AllQuestions';
-import SignUp_Login from './pages/SignUp-Login/SignUp-Login';
+import Questions from './pages/questions/questions';
+import SignUpLogin from './pages/auth/SignUpLogin';
+import Home from './pages/index';
 
 
 function App() {
   return (
     <div className="App">
       {/**Route setup */}
-      <Router>
+      <BrowserRouter>
         <Routes>
-          <Route path="/" exact component={AllQuestions} />
-          <Route path="/authenticate" exact component={SignUp_Login} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/questions" exact element={<Questions />} />
+          <Route path="/authenticate" exact element={<SignUpLogin />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./SignupLoginForm.css";
 import Axios from "../../utilities/client"
 
@@ -34,7 +34,7 @@ const LoginForm = () => {
                 <i class="fas fa-lock"></i>
                 <input placeholder="Password" type="text" onChange={e => setPassword(e.target.value)} />
             </fieldset>
-            <input type="submit" value="Sign in" className="signup-btn custom-btn" onClick={onSubmit} />
+            <input type="submit" value="Sign in" className="btn custom-btn" onClick={onSubmit} />
             <p class="">Or Sign in with social platforms</p>
             <div class="social-media">
                 <a href="/social" class="social-icon custom-btn">
@@ -84,7 +84,7 @@ const SignupForm = () => {
                 <i class="fas fa-lock"></i>
                 <input placeholder="Password" type="text" onChange={e => setPassword(e.target.value)} />
             </fieldset>
-            <input type="submit" value="Sign up" className="signup-btn custom-btn" onClick={onSubmit} />
+            <input type="submit" value="Sign up" className="btn custom-btn" onClick={onSubmit} />
             <p class="">Or Sign up with social platforms</p>
             <div class="social-media">
                 <a href="/social" class="social-icon custom-btn">
@@ -104,7 +104,22 @@ const SignupForm = () => {
     )
 }
 
+const DropDownLoginForm = ({ displayStatus, dropDownLoginRef }) => {
+    return (
+        <div 
+        className={displayStatus ? "showDropDownLoginForm" : "hideDropDownLoginForm"} 
+        ref={dropDownLoginRef}
+        >
+            <form action="/" method="post">
+                <div className="email"><input type="text" placeholder="email"></input></div>
+                <div className="paswword"><input type="test" placeholder="Password"></input></div>
+                <div className="submit" ><button className="submit custom-btn-dark-blue">Login</button></div>
+            </form>
+        </div>
+    )
+}
 export {
     LoginForm,
-    SignupForm
+    SignupForm,
+    DropDownLoginForm
 };
