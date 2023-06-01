@@ -1,0 +1,87 @@
+.hide-popover {
+    display: none;
+}
+
+.popover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    position: absolute;
+    gap: 15px;
+    top: 46px;
+    left: 205px;
+    border: 1px solid var(--ash);
+    border-radius: 7px;
+    width: 15rem;
+    background: var(--white);
+
+}
+
+.popover ol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    cursor: pointer;
+    padding: 10px 5px;
+    gap: 15px;
+    width: 100%;
+}
+
+.popover>ol>li {
+    text-align: left;
+    border-radius: 3px;
+    padding: 5px;
+    width: 12.3rem;
+
+}
+
+.popover>ol>li:hover {
+    background: var(--ash);
+    border: 1px solid var(--ash);
+    border-radius: 5px;
+}
+
+.popover>ol>li .popover-title {
+    color: var(--black-750);
+}
+
+.popover>ol>li .popover-content {
+    color: var(--black-350);
+}
+
+.popover>div {
+    background: var(--black-350);
+    border: 1px solid var(--ash);
+    height: 2.5rem;
+    width: 100%;
+    background: var(--grey-light);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.popover>div span {
+    margin-left: 20px;
+    color: var(--black-350);
+}
+
+.popover>div span:hover {
+    color: var(--black-750);
+}
+
+.hide-popover-power {
+    display: none;
+}
+.popover-arrow {
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    top: 42px;
+    transform: translateX(300px) rotate(135deg);
+    background: var(--white);
+    border-bottom: 1px solid var(--ash) ;
+    border-left: 1px solid var(--ash) ;
+}
