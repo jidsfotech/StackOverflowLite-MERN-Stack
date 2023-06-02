@@ -1,26 +1,26 @@
 import React from 'react';
 import './App.css';
 import {
-  BrowserRouter,
-  Route,
-  Routes,
-} from 'react-router-dom';
-import Questions from './pages/questions/questions';
-import SignUpLogin from './pages/auth/SignUpLogin';
-import Home from './pages/index';
+  BrowserRouter as 
+  Router,
+  Route, 
+  Switch, 
+  Redirect } from 'react-router-dom';
+  import AllQuestions from './pages/questions/AllQuestions';
+  import MainContainer from './pages/mainContainer/mainConatiner'
+  import SignUp_Login from './pages/auth/SignUp-Login';
 
 
 function App() {
   return (
     <div className="App">
-      {/**Route setup */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/questions" exact element={<Questions />} />
-          <Route path="/authenticate" exact element={<SignUpLogin />} />
-        </Routes>
-      </BrowserRouter>
+    {/**Route setup */}
+    <Router>
+      <Switch>
+        <Route path="/" exact component = {MainContainer} />
+        <Route path="/authenticate" exact component = {SignUp_Login} />
+      </Switch>
+    </Router>
     </div>
   );
 }

@@ -40,9 +40,41 @@ const Header = () => {
 
     const toggleSideNav = () => { setShowSideNav(!showSideNav) }
 
+<<<<<<< HEAD
     const togglePopOver = () => {
         !showPopover ? setPopOver(true) : setPopOver(false);
     }
+=======
+    return (
+        <header className="Header top-bar _fixed">
+            <div className="menu-bar" role="menubar">
+                <div className="menu-icon-mobile" onClick={toggleSideNav}>
+                    {showSideNav ? <HiX /> : <RiMenu4Fill className="SideIcons" />}
+                </div>
+                <Link className="brandlogo links" to="/" role="button">
+                    Stackoverflow-Lite
+                </Link>
+                <ol className="menu-bar-items menulinks" role="presentation">
+                    <li className="bar-item about">About</li>
+                    <li className="bar-item products">Products</li>
+                    <li className="bar-item team">Team</li>
+                </ol>
+                < SearchBar />
+                <ol className="menu-bar-items menubtns" role="auth-btn">
+                    <li id="smtphone-search-icon" className="smtphone-search-icon" onClick={toggle_searchBar_OnMobile}>
+                        <BsSearch className="s_icon-forMobile" />
+                    </li>
+                    {/* <li className="bar-item login-btn custom-btn">
+                        <Link onClick={toggleLogin} className="links" role="button"> Login </Link>
+                    </li> */}
+                    {showLogin ? <LoginForm /> : null}
+                    <li className="bar-item register-btn custom-btn">
+                        <Link className="links" to="/authenticate" role="button"> register </Link>
+                    </li>
+                </ol>
+            </div>
+            {showSearch_OnMobile ? <div className="smtphone-searchbar"><SearchBar showSearch_OnMobile={showSearch_OnMobile} /></div> : null}
+>>>>>>> 3424c00bfb614e0e0d9fedce9d7ba7bcc0df5625
 
     const handleClickOutside = (e) => {
         if (dropDownLoginRef.current && !dropDownLoginRef.current.contains(e.target)) {
