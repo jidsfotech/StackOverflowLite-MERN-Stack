@@ -1,4 +1,5 @@
 .auth-form {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +25,7 @@
     padding: 5px;
 }
 
-.auth-form fieldset input  {
+.auth-form fieldset input {
     background: none;
     border: none;
     line-height: 1;
@@ -42,7 +43,7 @@
     font-size: 1.1rem;
 }
 
-.auth-form .signup-btn{
+.btn, .btn {
     width: 12rem;
     height: 40px;
     font-weight: 600;
@@ -50,6 +51,7 @@
     margin-top: 20px;
     border: 2px solid var(--blue-900);
     border-radius: 50px;
+    cursor: pointer;
 }
 
 .auth-form p {
@@ -81,9 +83,43 @@
     align-items: center;
 }
 
+/* Drop down login form styled */
+.hideDropDownLoginForm {
+    display: none;
+}
+
+.showDropDownLoginForm {
+    display: block;
+    position: absolute;
+    top: 45px;
+    right: 5px;
+    z-index: 100;
+    background: var(--grey-dark);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.showDropDownLoginForm div {
+    margin: 10px;
+}
+
+.showDropDownLoginForm div>input {
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.showDropDownLoginForm div>button {
+    color: var(--white);
+    padding: 5px 20px;
+}
+
+/* Drop down login form styled end*/
+
+
 /** MEDIA QUERY*/
 @media screen and (max-width:1000px) {
-    
+
     .auth-form h1 {
         font-size: 2rem;
         margin-top: 5px;
@@ -92,32 +128,32 @@
     .auth-form fieldset {
         max-width: 250px;
     }
-    
-    .auth-form fieldset input  {
+
+    .auth-form fieldset input {
         line-height: 1;
         font-weight: 600;
         font-size: 1.1rem;
     }
-    
+
     .auth-form fieldset i {
         text-align: center;
         line-height: 45px;
         font-size: 1.1rem;
     }
-    
-    .auth-form .signup-btn{
+
+    .auth-form .signup-btn {
         width: 10rem;
         font-weight: 500;
     }
-    
+
     .auth-form p {
         font-size: 1rem;
     }
-    
+
     .auth-form .social-media {
         margin: 5px;
     }
-    
+
     .auth-form .social-media .social-icon {
         font-size: 1rem;
         height: 2.5rem;
@@ -125,17 +161,17 @@
     }
 }
 
-@media screen and (max-width: 800px ) {
+@media screen and (max-width: 800px) {
     .auth-form {
         max-width: 450px;
     }
 
-    .auth-form fieldset input  {
+    .auth-form fieldset input {
         line-height: 1;
         font-weight: 400;
         font-size: 1rem;
     }
-    
+
     .auth-form fieldset i {
         text-align: center;
         line-height: 35px;
@@ -143,5 +179,4 @@
     }
 }
 
-@media screen and (max-width: 580px ) {
-}
+@media screen and (max-width: 580px) {}

@@ -1,0 +1,20 @@
+.leftBarItems {
+    margin: 0 auto;
+    text-align: left;
+    height: 100%;
+}
+
+.bar-item {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.bar-item:active {
+    background: var(--black-050);
+    border-right: 3px solid var(--orange);
+}
+
+.bar-item:focus {
+    background: var(--black-050);
+    border-right: 3px solid var(--orange);
+  }

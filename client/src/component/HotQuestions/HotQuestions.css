@@ -1,0 +1,30 @@
+.hot-questions {
+    margin: 20px 10px 0 30px;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+.hot-questions h2 {
+    margin: 5px 0 20px 0;
+}
+
+.hot-q-flex {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 3;
+}
+
+.hot-questions .hot-q-ans {
+    padding: 10px;
+    background: rgb(124, 219, 124);
+    color: honeydew;
+    border-radius: 10px;
+}
+
+.hot-questions .hot-q-title {
+    font-size: 15px;
+    margin-left: 10px;
+}

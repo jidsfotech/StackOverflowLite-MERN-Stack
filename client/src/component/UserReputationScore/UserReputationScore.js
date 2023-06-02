@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./UserReputationScore.css"
-import image from "../../img/majeed.png";
+import profilePics from "../../assets/img/majeed.png";
 
 const UserreputationScore = () => {
     return (
         <div className="question-author">
             <p>asked Apr 20 '16 at 4:08</p>
             <div className="author-details">
-                <img src={image} alt="author-image" />
+                <img src={profilePics} alt="author" />
                 <div className="author" >
                     <Link className="author-name">zamani</Link>
                     <div className="reputation-score">
