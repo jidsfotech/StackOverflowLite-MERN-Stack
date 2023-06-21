@@ -42,13 +42,13 @@
     font-size: 1.1rem;
 }
 
-.btn, .btn {
+.btn, .custom-btn {
     width: 12rem;
     height: 40px;
     font-weight: 600;
     font-size: 0.8rem;
     margin-top: 20px;
-    border: 2px solid var(--blue-900);
+    border: 1px solid var(--blue-500);
     border-radius: 50px;
     cursor: pointer;
 }
