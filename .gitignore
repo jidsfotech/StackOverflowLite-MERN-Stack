@@ -1,13 +1,19 @@
 # ignore packages installed by npm
-/node_modules
+node_modules
+
 npm-debug.log
+
 .DS_Store
+
 /*.env
-.gitignore
-    node_modules
+    
+/node_modules
+
 #ignore vscode generated files
 .vscode
+
 .env 
+
 yarn.lock
 
-/client/node_modules/
+/client/node_modules
