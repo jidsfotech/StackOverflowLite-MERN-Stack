@@ -20,13 +20,17 @@ li {
   padding: 0;
 }
 
-.links,
+.link,
 a {
   text-decoration: none;
+  border: none;
+  outline: none;
 }
 
 button {
   outline: none;
+  border: none;
+  
 }
 
 fieldset {
@@ -158,9 +162,9 @@ img {
   --grey-brown: hwb(204 84% 14%);
   --grey: #c8ccd0;
   --grey-dark: #d0d4d8;
-  --orange: #f3974b;
+  --orange: #fd8726;
   --shadow: #ede7e7ee;
-  --ash: #e4e7ea;
+  --ash: #dce0e4;
   --font-color: rgb(131, 124, 124);
 }
 
@@ -179,6 +183,15 @@ body {
   min-height: 100%;
   background-image: none;
 }
+
+[placeholder]:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+    transition: opacity 0.5s 0.5s ease;
+    opacity: 0;
+} 
 
 input:active,
 input:focus,
@@ -204,7 +217,7 @@ button:focus {
   background: var(--blue-500);
   border-radius: 3px;
   text-align: center;
-  border: 1px solid var(--blue-600);
+  border: 1px solid var(--blue-400);
   min-width: 3rem;
 }
 

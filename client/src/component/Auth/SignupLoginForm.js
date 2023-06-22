@@ -73,7 +73,7 @@ const SignupForm = () => {
         <form className="auth-form">
             <h1> Sign up</h1>
             <fieldset>
-                <i class="fas fa-user"></i>
+                <i className="fas fa-user"></i>
                 <input placeholder="Username" type="text" onChange={e => setUsername(e.target.value)} />
             </fieldset>
             <fieldset>

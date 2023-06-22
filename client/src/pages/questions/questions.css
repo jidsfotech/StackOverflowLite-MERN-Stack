@@ -1,136 +1,36 @@
-.content{
-    position: relative;
+.q_wrapper {
+    width: 90%;
+    height: 100vh;
+    padding: 0;
+    margin: auto;
+}
+
+
+.q_main {
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
-    display: grid;
-    grid-template-columns: 30vh 2fr 1fr;
-    z-index: 1;
+    margin-left: 11rem;
 }
 
-.aside-left{
-    width: 30vh;
-    padding-top: 5rem;
-    border-right: 2px solid var(--black-050);
+.content {
+    width: 90%;
+    height: 100%;
+    margin-left: 10rem;
 }
 
-.questions-wrapper {
-    width: 100%;
-}
-
-.aside-right {
-    box-sizing: border-box;
-    position: relative;
-    z-index: 3;
-}
-
-.footerSection{
-    background:teal;
-    color:white;
-    height: 10rem;
-    width: 10rem;
-    position: relative;
-    margin: 20px ;
-
-}
-
-.main-top-grid {
-    display: flex;
-    flex: 0 0 auto;
-    padding: 20px 5px 10px 10px;
-}
-
-.main-top-grid h1 {
-    flex: 0 0 auto;
-    font-size: 2.07692308rem !important;
-}
-
-.ask-question-btn {
-    flex: 1 0 auto;
-    text-align: right;
-    padding: 15px 0;
-}
-
-.ask-question-btn a {
-    color: #fff;
-    background-color: var(--blue-500);
-    border-radius: 3px;
-    text-align: center;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.data-query {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 5px 10px 5px;
-}
-
-.in-archaive {
-    flex: 1 0 120px;
-    padding: 10px 5px;
-    text-align: left;
-}
-
-.query {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: flex-end;
-    border-radius: 2px;
-    border: 1px solid var(--black-300);
-}
-
-.newest,
-.active,
-.unanswered {
-    color: var(--black-300);
-    padding: 6px;
-}
-
-.active {
-    background: var(--black-200);
-    color: var(--black-600);
-    border: 1px solid var(--black-300);
-    border-top-width: 0;
-    border-bottom-width: 0;
-    border-left-width: 1px;
-    border-right-width: 1px;
-}
-
-
-
-/** Media query for tablets */
-@media screen and (max-width: 1024px) {
-    .left-sidebar {
-        display: none;
+@media screen and (max-width: 1300px) {
+    .q_wrapper {
+        width: 100%;
+        margin: 0;
     }
 }
 
-/** Media query for smartphones**/
-@media screen and (max-width: 480px) {
-    .left-sidebar {
-        display: none;
+@media screen and (max-width: 630px) {
+    .q_wrapper {
+        width: 100%;
     }
 
-    .main {
-        flex: 0 0 100%;
-    }
-
-    .main-right {
-        display: none;
-    }
-
-    .main-top-grid {
-        padding: 20px px;
-    }
-
-    .main-top-grid h1 {
-        padding-top: 10px;
-        font-size: 1.07692308rem !important;
-    }
-
-    .query {
-        justify-content: space-evenly;
+    .q_main {
+        margin-left:0;
     }
 }

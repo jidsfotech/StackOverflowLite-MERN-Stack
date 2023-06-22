@@ -2,20 +2,23 @@ import React from "react";
 import "./SearchBar.css";
 import { BsSearch } from "react-icons/bs";
 
-const SearchBar = (props) => {
-    if (props.showSearch_OnMobile) {
-        document.getElementById("searchbar").classList.add("searchbar-4smtphone");
-        document.getElementById("searchbar").classList.remove("searchbar");
-    }
-
+const SearchBar = ({ mobileSearchRef }) => {
     return (
-        <div className={props.showSearch_OnMobile ? "searchbar-4smtphone" : "searchbar"}>
-            <form id="searchbar" action="/search" method="get">
-                <div className="ps--relative">
-                    <div className="s_icon">
-                        <BsSearch />
-                    </div>
-                    <input name="q" type="text" className="s-input" placeholder="Search..." autoComplete="off maxlenght=240"></input>
+        <div className="searchbar" ref={mobileSearchRef}>
+            <form className="s_form" action="/search" method="get">
+                <div className="s_icon">
+                    <BsSearch />
+                </div>
+                <div>
+                    <input
+                        name="q"
+                        type="text"
+                        className="s-input"
+                        placeholder="Search..."
+                        autoComplete="off maxlenght=240"
+                        tabIndex="1"
+                    >
+                    </input>
                 </div>
             </form>
         </div>

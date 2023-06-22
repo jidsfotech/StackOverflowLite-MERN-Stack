@@ -1,12 +1,22 @@
 .nav-icon-mobile,
-.smtphone-search-icon,
-.sideNav {
+.mobile-search-icon-wrapper,
+.mobileSearchWrapper,
+.hide-mobileSearchWrapper,
+.hide--showMobileDropDownMenu,
+.showMobileDropDownMenu {
     display: none;
 }
 
 .header-wrapper {
-    position: relative;
-    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    height: 50px;
+    width: 100%;
+    background: var(--grey-light);
+    border: 1px solid var(--shadow);
+    box-shadow: var(--shadow);
 }
 
 .notify {
@@ -20,37 +30,36 @@
 }
 
 .brand-logo-wrapper {
-    flex: 13em 0 0;
-    min-width: 13em;
+    flex: 12rem 0 0.5rem;
+    text-align: left;
+    min-width: 10rem;
 }
 
 /* Main Nav */
 .nav {
     background: var(--grey-light);
-    position: fixed;
-    top: 3px;
-    left: 0;
+    min-width: 90%;
+    width: 85%;
+    height: 48px;
     text-align: center;
-    padding: 0;
-    width: 100%;
-    border: 1px solid var(--shadow);
-    box-shadow: var(--shadow);
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .nav-box {
     display: flex;
-    height: 45px;
-    margin: 0 3%;
-    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    gap: 0.5rem;
 }
 
 .nav-link {
-    align-self: center;
     border-radius: 15px;
     font-size: 0.9rem;
-    padding: 8px 0;
+    padding: 5px;
     cursor: pointer;
-    min-width: 5.5rem;
+    min-width: 4rem;
 }
 
 .nav-link:hover {
@@ -58,99 +67,152 @@
 }
 
 .nav-link:active,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link:focus-within {
     background: var(--orange);
     color: var(--white);
+    outline: none;
+}
+
+.searchWBarWrapper {
+    flex: 20em 1 1;
 }
 
 .auth-btns {
     align-self: center;
     display: flex;
     align-items: center;
-    justify-content: center;
     z-index: 10;
 }
 
 .login-btn,
 .signup-btn {
-    padding: .6em .9em;
+    padding: 0.5rem 0.8rem;
     margin: 0 5px;
 }
 
-.signup-btn .links {
-    color: var(--white);
+
+/** Media query for tabs**/
+@media screen and (max-width:1300px) {
+    .nav {
+        width: 100%;
+        margin: 0;
+    }
 }
 
-/** Media query for tablets */
-@media screen and (max-width: 1024px) {
-
-    .brandlogo {
-        font-size: 15px;
+@media screen and (max-width:980px) {
+    .nav {
+        width: 100%;
+        margin: 0;
     }
 
-    .menulinks .bar-item {
-        padding: 0 10px 0 10px;
+    .nav-link:nth-child(odd) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .nav-box {
+        justify-content: flex-start;
     }
 
-    .smtphone-search-icon {
+    .nav-link:nth-child(even) {
+        margin-right: auto;
+    }
+
+    .searchWBarWrapper {
         display: none;
     }
 
+    .mobile-search-icon-wrapper {
+        display: block;
+        cursor: pointer;
+        font-size: 1.6em;
+        height: 100%;
+        padding: 2px 5px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-icon-mobile:hover,
+    .nav-icon-mobile:focus {
+        background: var(--grey-dark);
+    }
+
+    .mobileSearchWrapper {
+        display: block;
+        margin: auto;
+        background: var(--grey-dark);
+        padding: 0.5rem 0.8rem;
+        text-align: center;
+    }
 }
 
 /** Media query for smartphones**/
-@media screen and (max-width: 480px) {
-    .menulinks .bar-item {
-        padding: 0 5px 0 5px;
-    }
+@media screen and (max-width: 530px) {
 
-    .menubtns {
-        margin: 0 5px 0 10px;
-    }
-
-    .menubtns .bar-item {
-        padding: 4px 4px 4px 4px;
-    }
-
-    .menu-icon-mobile {
-        display: block;
-        font-size: 2rem;
-    }
-
-    .sideNav {
-        display: block;
-        width: 70%;
-        position: fixed;
-        top: 3.5rem;
-        transition: 840ms;
-    }
-
-    .sideNav ul {
-        float: left;
-        margin: 5px 0 0 10px;
-    }
-
-    .sideNav.hidden {
+    .searchWBarWrapper,
+    .hide-mobileSearchWrapper {
         display: none;
     }
 
-    .brandlogo {
+    .aboout,
+    .for-teams,
+    .brand-logo-wrapper {
         display: none;
     }
 
-    .smtphone-search-icon {
-        display: inline-block;
-        height: 2rem;
-        font-size: 1.3rem;
+    .nav-icon-mobile,
+    .mobile-search-icon-wrappe,
+    .showMobileDropDownMenu {
+        display: block;
         cursor: pointer;
-        color: var(--black-400);
-        padding: 10px 6px 0px 6px;
-        margin: 0 2px 0 2px;
     }
 
-    .smtphone-searchbar {
-        background: var(--black-050);
-        padding: 8px;
+    .nav {
+        width: 100%;
     }
 
+    .nav-box {
+        gap: 0.2rem;
+    }
+
+    .nav-link {
+        min-width: 3rem;
+    }
+
+    .nav-icon-mobile,
+    .xIcon {
+        font-size: 1.7em;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.7rem;
+    }
+
+    .xIcon {
+        background: var(--grey-dark);
+        border: 1px solid var(--shadow);
+    }
+
+    .nav-icon-mobile:hover,
+    .nav-icon-mobile:focus {
+        background: var(--grey-dark);
+        border: 1px solid var(--shadow);
+    }
+
+    .mobilleLogoIcon {
+        color: var(--orange);
+    }
+
+    .mobileSearchWrapper {
+        display: block;
+        margin: auto;
+        background: var(--grey-dark);
+        padding: 0.5rem 0.8rem;
+        text-align: center;
+    }
 }
