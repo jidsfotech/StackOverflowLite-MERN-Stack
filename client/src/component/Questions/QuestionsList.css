@@ -1,0 +1,14 @@
+
+
+
+.questions-wrapper {
+    background:gold ;
+}
+
+.aside-right {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 3;
+    background:rgb(0, 255, 238) ;
+
+}
