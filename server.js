@@ -11,7 +11,7 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
 // setting database url base on current node enviroment
-const db = (process.env.NODE_ENV === "test" || "developement") ? config.mongo.devHost : config.mongo.host;
+const db = process.env.NODE_ENV === "test" ? config.mongo.devHost : config.mongo.host;
 
 //connect to mongoose 
 mongoose.connect(db)
