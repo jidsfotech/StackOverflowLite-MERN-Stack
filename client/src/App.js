@@ -16,7 +16,7 @@ function App() {
       {/**Route setup */}
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" exact element={<Questions />} />
           <Route path="/questions" exact element={<Questions />} />
           <Route path="/authenticate" exact element={<SignUpLogin />} />
         </Routes>
