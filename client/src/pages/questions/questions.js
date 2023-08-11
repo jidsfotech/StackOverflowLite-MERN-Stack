@@ -11,13 +11,12 @@ const Questions = () => {
     useEffect(() => {
         setShowLeftSideMenu(true);
         window.addEventListener('resize', () => {
-            const marginleft = window.getComputedStyle(document.querySelector('.q_wrapper'), null).getPropertyValue("margin-left");
-            setSideMenuLeftMargin(marginleft);
-
-            if (window.innerWidth < 530) {
+            const pageWrapper = window.getComputedStyle(document.querySelector('.q_wrapper'), null);
+            setSideMenuLeftMargin(pageWrapper.getPropertyValue("margin-left"));
+            if (window.innerWidth < 652) {
                 setShowLeftSideMenu(false)
             }
-            if (window.innerWidth > 530) {
+            if (window.innerWidth > 652) {
                 setShowLeftSideMenu(true)
             }
         })
@@ -29,9 +28,9 @@ const Questions = () => {
             <div className='q_wrapper'>
                 <LeftSideBar showLeftSideMenu={showLeftSideMenu} marginLeft={sideMenuLeftMargin} />
                 <div className='q_main' id='q_main'>
-                    <div className="content">
-                        {/* <QuestionsList /> */}
-                    </div>
+                    <section className="content">
+                        <QuestionsList />
+                    </section>
                 </div>
             </div>
         </div >

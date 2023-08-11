@@ -33,9 +33,6 @@
     "socket.io": "4.4.1",
     "validator": "13.0.0"
   },
-  "engines": {
-    "node": "12.14.0"
-  },
   "devDependencies": {
     "concurrently": "5.3.0",
     "jasmine": "3.5.0",

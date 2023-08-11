@@ -8,14 +8,11 @@
 
 .q_main {
     height: 100%;
-    width: 100%;
     margin-left: 11rem;
 }
 
 .content {
-    width: 90%;
     height: 100%;
-    margin-left: 10rem;
 }
 
 @media screen and (max-width: 1300px) {
@@ -25,7 +22,7 @@
     }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 652px) {
     .q_wrapper {
         width: 100%;
     }

@@ -1,18 +1,24 @@
 import React from 'react';
 import './QuestionsList.css';
 import Question from "./Question";
-import HotQuestions from "../HotQuestions/HotQuestions";
-import LeftSideBar from '../SideBar/LeftSideBar';
+import RightNavWidget from '../Widgets/RightNavWidget';
+import QuestionsMetrix from './QuestionsMetrix';
 
 const Questions = () => {
     return (
-        <div>
-            <div className="questions-wrapper">
-                <Question />
+        <div className='questionsListWrapper'>
+            <div>
+                <header><QuestionsMetrix /></header>
+                <section className="questionsWrapper">
+                    <Question />
+                    <Question />
+                    <Question />
+                    <Question />
+                </section>
             </div>
-            <div className="aside-right">
-                <HotQuestions />
-            </div>
+            <aside className="right-nav ads-and-widgets">
+                <RightNavWidget />
+            </aside>
         </div>
     )
 }

@@ -1,0 +1,163 @@
+.questionsMetricsWrapper {
+    height: 9.8rem;
+}
+
+.filterQuestions {
+    display: none;
+}
+
+.questionMetrics {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.metricsHeader,
+.metrics {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    justify-self: flex-end;
+}
+
+.metricsHeader>p {
+    margin-right: auto;
+    font-size: 1.7rem;
+    color: var(--black-750);
+}
+
+.metricsHeader>button {
+    padding: 0.7rem 1rem;
+    color: var(--white);
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.metrics>p {
+    margin-right: auto;
+    font-size: 1rem;
+    flex-shrink: 1;
+}
+
+.metrics>section {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 0.8rem;
+    flex-shrink: 0;
+}
+
+
+.metrixGridBox {
+    flex-shrink: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--shadow);
+    border-radius: 0.3rem;
+}
+
+.metrixGridBox>* {
+    cursor: pointer;
+    padding: 0.5rem 0.4rem;
+}
+
+.metrixGridBox>li {
+    border-right: 1px solid var(--shadow);
+    ;
+}
+
+.metrixGridBox>li:nth-child(3),
+.metrixGridBox>li:nth-child(5) {
+    flex-shrink: 0;
+}
+
+.metrixGridBox>li:nth-child(3) span {
+    color: var(--white);
+    background: var(--blue-500);
+    padding: 0 0.4rem;
+    border-radius: 0.3rem;
+}
+
+.metrics section>button {
+    min-width: 5rem;
+    flex-shrink: 0;
+    border: 1px solid var(--powder-700);
+    box-shadow: var(--shadow);
+    color: var(--powder-900);
+    background: var(--powder-300);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+.metrics section>button>span {
+    padding-right: 0.5rem;
+}
+
+.activeFilter {
+    background: #d0d4d8;
+}
+
+.more-filters-popover-wrapper {
+    position: absolute;
+    top: 155px;
+}
+
+@media screen and (max-width:1300px) {
+
+    .metrixGridBox>li:nth-child(3),
+    .metrixGridBox>li:nth-child(4) {
+        display: none;
+    }
+}
+
+/* @media screen and (max-width:1000px) {
+
+    .metrixGridBox>li:nth-child(3),
+    .metrixGridBox>li:nth-child(4) {
+        display: block;
+    }
+} */
+
+@media screen and (max-width: 650px) {
+    .metricsHeader>button {
+        font-size: 0.9rem;
+    }
+
+    .metrics {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .metrics>p {
+        font-size:0.9rem;
+    }
+
+    .metrics section {
+        width: 100%;
+    }
+
+    .metrics section>button {
+        min-width: 4rem;
+        font-size: 0.7rem;
+        padding: 0.4rem;
+    }
+    
+
+    .metrixGridBox>* {
+        padding: 0.3rem 0.3rem;
+        outline: none;
+    }
+
+    .metrixGridBox {
+        margin-right: auto;
+    }
+
+    .metrixGridBox>li:nth-child(3),
+    .metrixGridBox>li:nth-child(4) {
+        display: none;
+    }
+}

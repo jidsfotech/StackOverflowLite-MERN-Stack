@@ -6,11 +6,11 @@
 .asideLeftWrapper {
     position: fixed;
     top: 50px;
-    width: 11rem;
+    width: 10rem;
     height: 100%;
-    border-right: 2px solid var(--shadow);
+    border-right: 1px solid var(--shadow);
     overflow: hidden;
-    min-width: 10rem;
+    min-width: 11rem;
 }
 
 .asideLeft {
@@ -22,7 +22,7 @@
 .asideLeftTop {
     display: flex;
     flex-direction: column;
-    margin: 0.9rem 0 0 0;
+    margin: 1.5rem 0 0 0;
 }
 
 .asideTab {
@@ -134,15 +134,18 @@
     font-size: 0.7rem;
 }
 
-/* .leftNavLink:focus,
-.leftNavLink:active {
+.leftNav .link {
+    color: var(--black-350);
+}
+
+.activeTab {
     background: var(--grey-dark);
     color: black;
     font-weight: bolder;
     border-right: 3.5px solid #f48024;
-} */
+}
 
-.leftNavLink>.link {
+.activeLink {
     text-decoration: none;
     outline: none;
     color: var(--font-color);
