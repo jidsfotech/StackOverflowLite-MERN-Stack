@@ -1,0 +1,99 @@
+.hide-more-filters {
+    display: none;
+}
+
+.more-filters {
+    /* position: absolute; */
+    /* top: 51px;
+    gap: 15px; */
+    border: 1px solid var(--ash);
+    /* border-right: 2px solid var(--ash);
+    border-bottom: 2px solid var(--ash); */
+    border-radius: 7px;
+    width: 13rem;
+    /* z-index: 18; */
+    background: var(--white)
+}
+
+.more-filters-popover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 2px;
+}
+
+.more-filters-popover ol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    cursor: pointer;
+    gap: 13px;
+}
+
+.more-filters-popover>ol>li {
+    text-align: left;
+    border-radius: 3px;
+    width: 12.2rem;
+    padding: 4px;
+    margin: 3px;
+}
+
+.more-filters-popover>ol>li:hover {
+    background: var(--ash);
+}
+
+.filter-by-frequents,
+.filter-by-score {
+    color: var(--black-350);
+}
+
+.more-filters>section {
+    border-top: 2px solid var(--ash);
+    height: 2.5rem;
+    background: var(--grey-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.more-filters>section span {
+    margin-left: 20px;
+    color: var(--black-350);
+}
+
+.more-filters>section span:hover {
+    color: var(--black-750);
+}
+
+.more-filters-popver-arrow {
+    position: relative;
+    height: 8px;
+    width: 9px;
+    top: -8px;
+    transform: rotate(135deg);
+    background: var(--white);
+    margin: auto;
+    border-bottom: 1px solid var(--ash);
+    border-left: 1px solid var(--ash);
+}
+
+/* Media query */
+@media screen and (max-width:800px) {}
+
+
+/* Media query */
+@media screen and (max-width:530px) {
+    .more-filters {
+        width: 13rem;
+        top: 52px;
+    }
+
+    .more-filters-popover>ol>li {
+        padding: 3px;
+        width: 12rem;
+    }
+}

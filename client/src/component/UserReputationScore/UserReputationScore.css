@@ -1,67 +1,68 @@
 .question-author {
-    margin-top: 15px;
-    flex: 0 0 auto;
+    align-self: flex-end;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-items: end;
+    gap: 0.3rem;
 }
 
 .question-author p {
-    margin: 0 60px 5px ;
     color: var(--black-400);
+    order: 2;
 }
 
-.author-details{
+.author-details {
     display: flex;
 }
 
 .author-details img {
-    width: 3rem;
-    height: 40px;
+    width: 1rem;
+    height: 1rem;
 }
 
 .author {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    align-items: end;
+    padding-left: 0.6rem;
 }
 
 .author-name {
-    margin: 0px 0 0  8px;
     text-decoration: none;
     color: var(--blue-600);
 }
 
 .reputation-score {
-    margin: 11px 0 0  8px;
     display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    font-size: 1rem;
 }
 
-.score {
-    margin: 0 8px 0 8px;
+.reputation-score>ul {
+    display: flex;
+    align-items: center;
 }
 
-.score li {
-    display: inline-flex;
-    margin: 0 3px 0 3px;
+.reputation-score>ul li {
+    margin: 0 0.1rem;
 }
 
-.score .indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+.reputation-score ul li:nth-child(1) {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 1.5rem;
 }
 
-ul .gold {
-    background: var(--orange-900);    
+.reputation-score>ul .gold-honor{
+    background: var(--orange-900);
 }
 
-ul .silver {
-    background: var(--black-400);    
+.reputation-score>ul .silver-honor {
+    background: var(--black-400);
 }
 
-ul .bronze {
-    background: var(--yellow-900);    
+.reputation-score>ul .bronze-honor {
+    background: var(--yellow-900);
 }
 
-@media screen and (max-width: 480px) {
-}
+@media screen and (max-width: 480px) {}

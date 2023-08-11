@@ -17,11 +17,9 @@ import {
 import { Link } from 'react-router-dom';
 
 
-
 const LeftSideBar = ({ showMobileDropDownMenu, showLeftSideMenu, marginLeft }) => {
     const [componentClass, setComponentClass] = useState('hidden');
-    const [leftMargin, setLeftMargin] = useState(0)
-
+    const [leftMargin, setLeftMargin] = useState(0);
 
     // Set mobile drop down menu
     useEffect(() => {
@@ -49,45 +47,47 @@ const LeftSideBar = ({ showMobileDropDownMenu, showLeftSideMenu, marginLeft }) =
         let tabIdx = leftSideMunuTabsPageLink.filter(obj => obj.path === pagePath);
         if (tabIdx[0].id) {
             const tabEle = document.getElementById(tabIdx[0].id);
-            const tabEleLink = tabEle.querySelectorAll('.link');
-            Object.assign(tabEle.style, leftMenuSelectedTabStyle);
-            Object.assign(tabEleLink[0].style, leftMenuSelectedTabLinktyle);
+            const tabEleLink = tabEle.children[0];
+            tabEle.classList.add('activeTab');
+            tabEleLink.classList.add('activeLink')
+            // Object.assign(tabEle.style, leftMenuSelectedTabStyle);
+            // Object.assign(tabEleLink[0].style, leftMenuSelectedTabLinktyle);
             // document.getElementById(tabIdx[0].id).focus();
         }
-    }, []);
+    });
 
     // Set left side menu
     // useEffect(() => {
     //     setLeftMargin(marginLeft);
-    //     console.log('side nav',marginLeft)
+    //     console.log('side nav', marginLeft)
     // }, [marginLeft]);
 
     return (
         <div className={`${componentClass}`}>
             <div className='="asideLeft'>
                 <div className='asideLeftTop'>
-                    <div className="asideTab leftNavLink" tabIndex={0} id='homeTabIdx'>
+                    <div className="asideTab leftNav" id='homeTabIdx'>
                         <Link to='/' className="link"> Home</Link>
                     </div>
                     <div className='asideTab'>
                         <div className='pqTab'>PUBLIC</div>
-                        <div className="pqTab leftNavLink" id='questionsTabIdx' tabIndex={0}>
+                        <div className={`pqTab leftNav`} id='questionsTabIdx' tabIndex={0}>
                             <Link to='/questions' className="link">
                                 <span><FaGlobeAmericas /></span>
                                 Questions
                             </Link>
                         </div>
                         <ol className='pqTab'>
-                            <li className='leftNavLink' tabIndex={0} id='tagsTabIdx'>Tags</li>
-                            <li className='leftNavLink' tabIndex={0} id='usersTabIdx' >
+                            <li className='leftNav' tabIndex={0} id='tagsTabIdx'>Tags</li>
+                            <li className='leftNav' tabIndex={0} id='usersTabIdx' >
                                 <Link to="/authenticate" className="link">Users</Link>
                             </li>
-                            <li className='leftNavLink' tabIndex={0} id='companiesTagIdx'>Companies</li>
+                            <li className='leftNav' tabIndex={0} id='companiesTagIdx'>Companies</li>
                         </ol>
                     </div>
                     <div className='asideTab '>
                         <div className='clTab'> COLLECTIVES <span><FaInfoCircle /></span></div>
-                        <div className='clTab leftNavLink' tabIndex={0} id='explorTabIdx'>
+                        <div className='clTab leftNav' tabIndex={0} id='explorTabIdx'>
                             <span><FaStar /></span>Explore Collectives
                         </div>
                     </div>
