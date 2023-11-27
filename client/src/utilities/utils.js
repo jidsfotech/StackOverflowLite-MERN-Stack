@@ -1,3 +1,4 @@
+
 // get an element coordinate
 export const getOffset = (el) => {
     const rect = el.getBoundingClientRect();
@@ -6,3 +7,6 @@ export const getOffset = (el) => {
         top: rect.top + window.scrollY
     };
 }
+
+// Get window inner width
+export const getWindowInnerWidth = () => window.innerWidth;

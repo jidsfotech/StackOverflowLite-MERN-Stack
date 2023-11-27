@@ -1,0 +1,6 @@
+
+.widget-arrow {
+    margin-left: auto;
+    color: var(--font-color);
+    cursor: pointer;
+}

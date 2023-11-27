@@ -9,11 +9,11 @@ export const Popover = ({ showPopover, popOverRef }) => {
     }
     return (
         <div 
-        className={showPopover ? "popover" : "hide-popover"} ref={popOverRef}
+        className={showPopover ? "popover-pane" : "hide-popover"} ref={popOverRef}
         id="productsTypesPopver"
         >
             <div className="popover-arrow" ></div>
-            <div className="products-types-popover" onClick={handleProductsClick}>
+            <div className="products-list-popover" onClick={handleProductsClick}>
                 <ol>
                     <li>
                         <Link to="/questions">

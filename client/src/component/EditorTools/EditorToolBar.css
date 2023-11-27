@@ -1,0 +1,87 @@
+/* Mobile fisrt approach */
+
+.editor-toolbar-wrapper {
+    width: 100%;
+    min-height: 2.5rem;
+    flex: 0 0 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* border-left: 1px var(--black-200);
+    border-right: 1px var(--black-200); */
+    overflow: hidden;
+}
+
+.editor-toolbar {
+    flex: 1 0 70%;
+    height: 100%;
+    margin-right: auto;
+    display: flex;
+    gap: 0.7rem;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.editor-toolbar>div {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 0.5rem;
+    /* border-right: 1px var(--black-200) */
+}
+
+.editor-toolbar>div>button {
+    color: var(--font-color);
+    background: var(--white);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.redo-undo-toolbar>button:nth-child(2) {
+    opacity: 0.5;
+}
+
+.fade-tips-menu-button,
+.show-tips-menu-button {
+    display: none;
+}
+
+@media screen and (min-width:650px) {
+
+    .editor-toolbar {
+        gap: 2rem;
+        justify-content: start;
+        box-sizing: border-box;
+        padding-left: 0.4rem;
+    }
+
+    .editor-toolbar>div {
+        gap: 0.8rem;
+    }
+
+    .editor-toolbar>div>button {
+        font-size: 1rem;
+    }
+    
+    .tips-menu-button {
+        flex: 0 0 9rem;
+        border-radius: 4px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        height: 2rem;
+        margin: 0.4rem;
+    }
+
+    .show-tips-menu-button {
+        background: var(--black-100);
+    }
+
+    .fade-tips-menu-button {
+        background: var(--white);
+    }
+}

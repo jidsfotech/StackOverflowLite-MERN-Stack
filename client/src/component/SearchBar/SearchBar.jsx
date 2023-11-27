@@ -13,7 +13,7 @@ const SearchBar = ({ mobileSearchRef }) => {
                     <input
                         name="q"
                         type="text"
-                        className="s-input"
+                        className="srch-input"
                         placeholder="Search..."
                         autoComplete="off maxlenght=240"
                         tabIndex="1"

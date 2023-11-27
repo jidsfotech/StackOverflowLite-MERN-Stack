@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import './QuestionsMetrix.css';
 import { FaWifi, FaSortDown } from 'react-icons/fa';
 import { MoreFilterPopover } from './MoreFilterPopover';
@@ -9,6 +10,7 @@ const QuestionsMetrix = () => {
     const [currentActivefilter, setCurrentActivefilter] = useState('newest');
     const [showMoreFilterPopover, setShowMoreFilterPopover] = useState(false);
     const MoreFilterPopoverRef = useRef();
+    const navigate = useNavigate();
 
     const handleFilterActiveState = (event) => {
         document.getElementById(currentActivefilter).classList.remove('activeFilter');
@@ -36,7 +38,7 @@ const QuestionsMetrix = () => {
 
     }
 
-    
+
     const handleClickOutside = (e) => {
         if (MoreFilterPopoverRef.current && !MoreFilterPopoverRef.current.contains(e.target)) {
             setShowMoreFilterPopover(false);
@@ -66,7 +68,11 @@ const QuestionsMetrix = () => {
             <div className='questionMetrics'>
                 <div className='metricsHeader'>
                     <p>All Questions</p>
-                    <button className='custom-btn-dark-blue'>Ask Qestion</button>
+                    <button
+                        onClick={() => navigate('/post-question')}
+                        className='custom-btn-dark-blue'>
+                        Ask Qestion
+                    </button>
                 </div>
                 <div className='metrics'>
                     <p>23, 3547474 questions</p>

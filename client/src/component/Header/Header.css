@@ -55,11 +55,11 @@
 }
 
 .nav-link {
-    border-radius: 15px;
+    border-radius: 10px;
     font-size: 0.9rem;
-    padding: 5px;
+    padding: 3px;
     cursor: pointer;
-    min-width: 4rem;
+    min-width: 4.5rem;
 }
 
 .nav-link:hover {
