@@ -1,21 +1,21 @@
-.hide-popover {
+.hide-more-filters {
     display: none;
 }
 
-.popover-pane {
-    position: absolute;
-    top: 52px;
-    gap: 15px;
-    border-left: 2px solid var(--ash);
-    border-right: 2px solid var(--ash);
-    border-bottom: 2px solid var(--ash);
+.more-filters {
+    /* position: absolute; */
+    /* top: 51px;
+    gap: 15px; */
+    border: 1px solid var(--ash);
+    /* border-right: 2px solid var(--ash);
+    border-bottom: 2px solid var(--ash); */
     border-radius: 7px;
-    width: 14rem;
+    width: 13rem;
     /* z-index: 18; */
-    background: var(--white);
+    background: var(--white)
 }
 
-.products-list-popover {
+.more-filters-popover {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,38 +23,33 @@
     margin: 2px;
 }
 
-.products-list-popover ol {
-    padding: 0;
-    margin: 0;
+.more-filters-popover ol {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     cursor: pointer;
-    gap: 18px;
+    gap: 13px;
 }
 
-.products-list-popover>ol>li {
+.more-filters-popover>ol>li {
     text-align: left;
     border-radius: 3px;
-    width: 13.2rem;
-    /* padding: 2px; */
-    /* margin: 3px; */
+    width: 12.2rem;
+    padding: 4px;
+    margin: 3px;
 }
 
-.products-list-popover>ol>li:hover {
+.more-filters-popover>ol>li:hover {
     background: var(--ash);
 }
 
-.products-list-popover>ol>li .popover-title {
-    color: var(--black-750);
-}
-
-.products-list-popover>ol>li .popover-content {
+.filter-by-frequents,
+.filter-by-score {
     color: var(--black-350);
 }
 
-.popover-pane>section {
+.more-filters>section {
     border-top: 2px solid var(--ash);
     height: 2.5rem;
     background: var(--grey-light);
@@ -65,15 +60,16 @@
     width: 100%;
 }
 
-.popover-pane>section span {
+.more-filters>section span {
+    margin-left: 20px;
     color: var(--black-350);
 }
 
-.popover-pane>section span:hover {
+.more-filters>section span:hover {
     color: var(--black-750);
 }
 
-.popover-arrow {
+.more-filters-popver-arrow {
     position: relative;
     height: 8px;
     width: 9px;
@@ -86,18 +82,17 @@
 }
 
 /* Media query */
-@media screen and (max-width:800px) {
-} 
+@media screen and (max-width:800px) {}
 
 
 /* Media query */
- @media screen and (max-width:530px) {
-    .popover-pane {
+@media screen and (max-width:530px) {
+    .more-filters {
         width: 13rem;
         top: 52px;
     }
 
-    .products-list-popover>ol>li {
+    .more-filters-popover>ol>li {
         padding: 3px;
         width: 12rem;
     }

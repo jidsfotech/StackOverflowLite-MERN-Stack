@@ -55,11 +55,11 @@
 }
 
 .nav-link {
-    border-radius: 15px;
+    border-radius: 10px;
     font-size: 0.9rem;
-    padding: 5px;
+    padding: 3px;
     cursor: pointer;
-    min-width: 4rem;
+    min-width: 4.5rem;
 }
 
 .nav-link:hover {
@@ -112,16 +112,30 @@
 }
 
 @media screen and (max-width: 650px) {
+
+    .searchWBarWrapper,
+    .hide-mobileSearchWrapper {
+        display: none;
+    }
+
     .nav-box {
         justify-content: flex-start;
+    }
+
+    .aboout,
+    .for-teams,
+    .brand-logo-wrapper {
+        display: none;
     }
 
     .nav-link:nth-child(even) {
         margin-right: auto;
     }
 
-    .searchWBarWrapper {
-        display: none;
+    .nav-icon-mobile,
+    .showMobileDropDownMenu {
+        display: block;
+        cursor: pointer;
     }
 
     .mobile-search-icon-wrapper {
@@ -138,6 +152,7 @@
     .nav-icon-mobile:hover,
     .nav-icon-mobile:focus {
         background: var(--grey-dark);
+        border: 1px solid var(--shadow);
     }
 
     .mobileSearchWrapper {
@@ -146,40 +161,6 @@
         background: var(--grey-dark);
         padding: 0.5rem 0.8rem;
         text-align: center;
-    }
-}
-
-/** Media query for smartphones**/
-@media screen and (max-width: 530px) {
-
-    .searchWBarWrapper,
-    .hide-mobileSearchWrapper {
-        display: none;
-    }
-
-    .aboout,
-    .for-teams,
-    .brand-logo-wrapper {
-        display: none;
-    }
-
-    .nav-icon-mobile,
-    .mobile-search-icon-wrappe,
-    .showMobileDropDownMenu {
-        display: block;
-        cursor: pointer;
-    }
-
-    .nav {
-        width: 100%;
-    }
-
-    .nav-box {
-        gap: 0.2rem;
-    }
-
-    .nav-link {
-        min-width: 3rem;
     }
 
     .nav-icon-mobile,
@@ -198,21 +179,22 @@
         border: 1px solid var(--shadow);
     }
 
-    .nav-icon-mobile:hover,
-    .nav-icon-mobile:focus {
-        background: var(--grey-dark);
-        border: 1px solid var(--shadow);
-    }
-
     .mobilleLogoIcon {
         color: var(--orange);
     }
+}
 
-    .mobileSearchWrapper {
-        display: block;
-        margin: auto;
-        background: var(--grey-dark);
-        padding: 0.5rem 0.8rem;
-        text-align: center;
+/** Media query for smartphones**/
+@media screen and (max-width: 530px) {
+    .nav {
+        width: 100%;
+    }
+
+    .nav-box {
+        gap: 0.2rem;
+    }
+
+    .nav-link {
+        min-width: 3rem;
     }
 }

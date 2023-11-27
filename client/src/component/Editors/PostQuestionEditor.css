@@ -1,0 +1,114 @@
+/* Mobile first approach */
+
+.post-question-editor-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background: var(--white);
+}
+
+.post-question-editor-wrapper p {
+    word-spacing: 0.1rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+    flex: 0 0 1rem;
+}
+
+.post-question-editor-wrapper p:nth-child(1) {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--black-700);
+}
+
+.post-editor-container,
+.answer-your-editor-container {
+    padding-top: 2px;
+    width: 100%;
+}
+
+pre.s-code-block {
+    background: white !important;
+}
+
+.s-btn-group,
+.js-heading-btn {
+    display: none !important;
+}
+
+.d-none {
+    display: flex !important;
+}
+
+.s-editor-menu-block button {
+    padding: 0.2rem;
+}
+
+.post-editor-container {
+    /* margin-top: 0; */
+}
+
+.draft {
+    padding: 0.8rem 0;
+}
+
+.post-question-editor-wrapper>ul {
+    display: flex;
+    justify-content: start;
+    gap: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.post-question-editor-wrapper>ul li:nth-child(1) span {
+    border: 1px solid var(--black-500);
+    background: var(--black-050);
+    border-radius: 0.2rem;
+    color: var(--black-500);
+    padding: 1.2px;
+}
+
+.answer-editor-toggle-wrapper {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 1rem 0 0.7rem 0;
+    width: 100%;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    word-spacing: 2px;
+}
+
+.answer-editor-toggle-wrapper input {
+    cursor: pointer;
+}
+
+.answer-editor-toggle-wrapper>div a {
+    color: var(--blue-700);
+}
+
+.hide-answer-your-question-editor {
+    display: none;
+}
+
+.show-answer-your-question-editor {
+    display: block;
+    width: 100%;
+}
+
+.commnuity-wiki {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+@media screen and (min-width:1000px) {
+    /* .post-question-editor {
+        margin-right: 0 1rem;
+    } */
+}

@@ -11,21 +11,21 @@ const UserreputationScore = () => {
                 <img src={profilePics} alt="author" />
                 <div className="author" >
                     <Link className="author-name">zamani</Link>
-                    <div className="reputation-score">
+                    {/* <div className="reputation-score">
                         <div className="totalFrom-author"> 0 </div>
-                        <ul className="score">
-                            <li className="gold indicator"> </li>
+                        <ul>
+                            <li className="gold-honor"> </li>
                             <li> 0 </li>
                         </ul>
-                        <ul className="score">
-                            <li className="silver indicator"> </li>
+                        <ul>
+                            <li className="silver-honor"> </li>
                             <li> 0</li>
                         </ul>
-                        <ul className="score">
-                            <li className="bronze indicator"> </li>
+                        <ul>
+                            <li className="bronze-honor"> </li>
                             <li>0</li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

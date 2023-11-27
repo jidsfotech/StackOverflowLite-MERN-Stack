@@ -1,0 +1,113 @@
+/* Using mobile firt approach */
+.post-qust-sidebar-widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.post-qust-sidebar-widget>div:nth-child(1) {
+    display: flex;
+}
+
+.post-qust-sidebar-widget-item {
+    display: none;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--black-100);
+    border-radius: calc(4px);
+    /* font-size: 0.8rem; */
+    box-sizing: border-box;
+}
+
+.guide-header {
+    display: flex;
+    background: var(--black-025);
+    border-top: 1px solid var(--black-075);
+    color: var(--black-600);
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 0.9rem;
+    cursor: pointer;
+}
+
+.post-qust-gudie-content-wrapper {
+    background: var(--white);
+    border-top: 1px solid var(--black-075);
+    color: var(--black-600);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-qust-gudie-content-wrapper p {
+    line-height: 1.5;
+    text-align: justify;
+    padding: 0.5rem 0.9rem;
+}
+
+.second-guide-content {
+    gap: 1rem;
+    padding: 0.5rem 0.9rem;
+}
+
+.second-guide-content-links {
+    color: var(--blue-400);
+}
+
+.post-quest-guide {
+    padding: 0.5rem 0.9rem;
+}
+
+.step-two,
+.step-three {
+    border-top: 1px solid var(--black-075);
+    border-bottom: 1px solid var(--black-075);
+}
+
+.post-quest-guide div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem 0;
+    font-weight: bold;
+}
+
+.post-quest-guide div:nth-child(1) span {
+    color: var(--blue-300);
+    font-size: 1rem;
+}
+
+.post-quest-guide div:nth-child(2) {
+    text-align: left;
+    display: none;
+}
+
+.post-quest-guide div:nth-child(2) ol {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.post-quest-guide div:nth-child(2) ol>li {
+    display: flex;
+    text-align: center;
+    line-height: 2;
+}
+
+.post-quest-guide div:nth-child(2) ol>li>span {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 0.5;
+}
+
+@media screen and (min-width:600px) {
+    .post-qust-sidebar-widget {
+        gap: 1.5rem
+    }
+
+    .post-qust-sidebar-widget-item {
+        display: flex;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,49 @@
+.title-wrapper {
+    width: 100%;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.title-heading {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.title-heading div p {
+    padding: 0.5rem 0rem;
+    box-sizing: border-box;
+}
+
+.title-wrapper>form {
+    width: 99%;
+    box-sizing: border-box;
+    display: flex;
+    border: 1px solid var(--black-200);
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.title-wrapper>form>input {
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.title-wrapper>form>input::placeholder {
+    color: var(--black-200);
+    font-size: 0.8rem;
+    word-spacing: 2px;
+}
+
+.title-wrapper>form:focus,
+.title-wrapper>form:focus-within {
+    border: 4px solid var(--blue-100);
+}
+
+.title-wrapper>form>input:focus,
+.title-wrapper>form>input:focus-within {
+    border: 1px solid var(--black-300);
+}

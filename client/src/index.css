@@ -170,6 +170,7 @@ img {
 
 html {
   min-width: auto;
+  font-size: 13px;
 }
 
 body {
@@ -219,6 +220,7 @@ button:focus {
   text-align: center;
   border: 1px solid var(--blue-400);
   min-width: 3rem;
+  box-sizing: border-box;
 }
 
 .custom-btn-dark-blue:hover {

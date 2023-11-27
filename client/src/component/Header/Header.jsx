@@ -13,6 +13,7 @@ import brabdLogo from "../../assets/img/brand.png";
 import { Popover } from "../Popover/Popover";
 import { DropDownLoginForm } from "../Auth/SignupLoginForm";
 import LeftSideBar from "../SideBar/LeftSideBar";
+import { getOffset, getWindowInnerWidth } from "../../utilities/utils";
 
 const Header = () => {
     const [showLogin, setShowLogin] = useState(false);
@@ -63,28 +64,19 @@ const Header = () => {
         }
     }
 
-    // get an element coordinate
-    const getOffset = (el) => {
-        const rect = el.getBoundingClientRect();
-        return {
-            left: rect.left + window.scrollX,
-            top: rect.top + window.scrollY
-        };
-    }
-
     // adjust the position of the products menu popver dropdown
     const adjustProductsTabPopoverPosition = (ele) => {
         const { left, top } = getOffset(ele);
-        document.getElementById('productsTypesPopver').style.left = `${left - 70}px`;
+        document.getElementById('productsTypesPopver').style.left = `${left - 65}px`;
 
     }
     
     useEffect(() => {
         window.addEventListener('resize', (e) => {
             const ele = document.getElementById('productsTab');
-            const { left, top } = getOffset(ele);
-            document.getElementById('productsTypesPopver').style.left = `${left - 66}px`;
-            if (window.innerWidth > 530) {
+            adjustProductsTabPopoverPosition(ele);
+            const pageWidth = getWindowInnerWidth();
+            if (pageWidth > 530) {
                 setShowMobileDropDownMenu(false)
             }
         });

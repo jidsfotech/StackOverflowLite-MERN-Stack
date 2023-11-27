@@ -5,7 +5,7 @@ module.exports = {
     },
     mongo: {
         host: process.env.DATABASE_HOST,
-        devHost: process.env.DEV_DATABASE_HOST || "mongodb://127.0.0.1:27017/stackoverflowliteDB",
+        devHost: process.env.DEV_DATABASE_HOST,
     },
     secretOrKey: process.env.secretOrKey,
 }

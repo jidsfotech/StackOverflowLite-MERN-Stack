@@ -1,0 +1,10 @@
+# ignore packages installed by npm
+/node_modules/
+npm-debug.log
+.DS_Store
+/*.env
+
+# #ignore vscode generated files
+.vscode
+
+.env

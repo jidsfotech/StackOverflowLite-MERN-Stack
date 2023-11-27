@@ -1,6 +1,6 @@
 .searchbar {
     background: var(--white);
-    border: 1px solid var(--black-200);
+    /* border: 1px solid var(--black-200); */
 }
 
 .s_form {
@@ -18,11 +18,17 @@
     line-height: 6px;
 }
 
-.s-input {
+.s_form>div:nth-child(2) {
+    width: 100%;
+}
+
+.s_form>div:nth-child(2) .srch-input {
     box-shadow: none;
     color: var(--black-700);
     border: 1px solid var(--white);
     border-radius: 3px;
+    padding: 0;
+    width: 100%;
 }
 
 .s_form:hover,
