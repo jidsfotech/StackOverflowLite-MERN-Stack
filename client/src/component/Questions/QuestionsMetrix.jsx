@@ -75,7 +75,7 @@ const QuestionsMetrix = () => {
                     </button>
                 </div>
                 <div className='metrics'>
-                    <p>23, 3547474 questions</p>
+                    <p>231, 3547474 questions</p>
                     <section>
                         <ol className='metrixGridBox'>
                             <li id='newest' tabIndex='0'>Newest</li>

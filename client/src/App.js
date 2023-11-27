@@ -17,7 +17,7 @@ function App() {
       {/**Route setup */}
       <BrowserRouter>
         <Routes>
-          <Route path="/questions" exact element={<Home />} />
+          <Route path="/" exact element={<Questions />} />
           <Route path="/questions" exact element={<Questions />} />
           <Route path="/authenticate" exact element={<SignUpLogin />} />
           <Route path="/post-question" exact element={<PostQuestionPage />} />
