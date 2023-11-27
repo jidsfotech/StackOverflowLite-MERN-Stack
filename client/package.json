@@ -4,16 +4,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@stackoverflow/stacks-editor": "^0.8.9",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.5.0",
     "@testing-library/user-event": "7.2.1",
     "async_hooks": "^1.0.0",
     "axios": "0.20.0",
+    "markdown-it": "^13.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "4.9.0",
+    "react-markdown": "^8.0.7",
     "react-router-dom": "6.8.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-scrollbars-custom": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

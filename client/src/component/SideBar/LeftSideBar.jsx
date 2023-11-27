@@ -45,7 +45,7 @@ const LeftSideBar = ({ showMobileDropDownMenu, showLeftSideMenu, marginLeft }) =
     useEffect(() => {
         const pagePath = window.location.pathname;
         let tabIdx = leftSideMunuTabsPageLink.filter(obj => obj.path === pagePath);
-        if (tabIdx[0].id) {
+        if (tabIdx.length !== 0) {
             const tabEle = document.getElementById(tabIdx[0].id);
             const tabEleLink = tabEle.children[0];
             tabEle.classList.add('activeTab');

@@ -27,7 +27,7 @@
 
 .asideTab {
     text-align: left;
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
     cursor: pointer;
     outline: none;
     padding: 0.7rem 0 0.7rem 0.7rem;

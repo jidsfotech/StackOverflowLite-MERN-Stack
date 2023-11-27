@@ -14,7 +14,7 @@
     margin-left: 1rem;
     border: 1px solid var(--yellow-200);
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .right-nav-widget ol>* {
@@ -25,7 +25,7 @@
     gap: 0.5rem;
     width: 100%;
     padding-left: 0.5rem;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     cursor: pointer;
 }
 
@@ -38,11 +38,17 @@
     padding-bottom: 0.7rem;
 }
 
+.right-nav-widget ol>li:nth-child(5) div,
+.right-nav-widget ol>li:nth-child(6) div {
+    color:var(--blue-300);
+}
+
 @media screen and (max-width: 1080px) {
     .widget-wrapper {
         width: 100%;
     }
+
     .right-nav-widget ol {
-        margin-left:0;
+        margin-left: 0;
     }
 }

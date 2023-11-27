@@ -1,0 +1,84 @@
+.hide-formarting-tips-box,
+.hide-formarting-tips-wrapper {
+    display: none;
+}
+
+.formarting-tips-wrapper {
+    width: 100%;
+    flex: 1 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formarting-tips-nav {
+    flex: 1 1 1;
+    border-top: 1px solid var(--black-200);
+    border-bottom: 1px solid var(--black-200);
+    background: var(--black-025);
+}
+
+.formarting-tips-nav ul {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+}
+
+.formarting-tips-nav ul>li {
+    cursor: pointer;
+}
+
+.formarting-tips-nav ul>li:nth-child(9) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--blue-300);
+}
+
+.formarting-tips-nav ul>li:nth-child(9) span {
+    color: var(--blue-500);
+    /* font-weight: bolder;
+    font-size: larger; */
+    cursor: pointer;
+}
+
+.formarting-tips {
+    box-shadow: var(--black-300);
+    /* border-top: 1px solid var(--black-200);
+    border-right: 1px solid var(--black-200); */
+    box-sizing: border-box;
+    background: var(--white);
+    width: 100%;
+    /* height: 100%; */
+    padding: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.scrollbarTrackX {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 3px;
+    user-select: none;
+    height: 7px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-top: 0.5rem;
+}
+
+.scrollbarThUmBX {
+    cursor: pointer;
+    border-radius: 3px;
+    background: var(--black-300);
+    height: 100%;
+    width: 20%;
+    transform: translateX(10px);
+    display: block
+}

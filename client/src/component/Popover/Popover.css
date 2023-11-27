@@ -2,20 +2,20 @@
     display: none;
 }
 
-.popover {
+.popover-pane {
     position: absolute;
-    top: 51px;
+    top: 52px;
     gap: 15px;
     border-left: 2px solid var(--ash);
     border-right: 2px solid var(--ash);
     border-bottom: 2px solid var(--ash);
     border-radius: 7px;
-    width: 13rem;
+    width: 14rem;
     /* z-index: 18; */
-    background: white;
+    background: var(--white);
 }
 
-.products-types-popover {
+.products-list-popover {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +23,9 @@
     margin: 2px;
 }
 
-.products-types-popover ol {
+.products-list-popover ol {
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,27 +34,27 @@
     gap: 18px;
 }
 
-.products-types-popover>ol>li {
+.products-list-popover>ol>li {
     text-align: left;
     border-radius: 3px;
-    width: 12.2rem;
-    padding: 2px;
-    margin: 3px;
+    width: 13.2rem;
+    /* padding: 2px; */
+    /* margin: 3px; */
 }
 
-.products-types-popover>ol>li:hover {
+.products-list-popover>ol>li:hover {
     background: var(--ash);
 }
 
-.products-types-popover>ol>li .popover-title {
+.products-list-popover>ol>li .popover-title {
     color: var(--black-750);
 }
 
-.products-types-popover>ol>li .popover-content {
+.products-list-popover>ol>li .popover-content {
     color: var(--black-350);
 }
 
-.popover>section {
+.popover-pane>section {
     border-top: 2px solid var(--ash);
     height: 2.5rem;
     background: var(--grey-light);
@@ -63,12 +65,11 @@
     width: 100%;
 }
 
-.popover>section span {
-    margin-left: 20px;
+.popover-pane>section span {
     color: var(--black-350);
 }
 
-.popover>section span:hover {
+.popover-pane>section span:hover {
     color: var(--black-750);
 }
 
@@ -91,12 +92,12 @@
 
 /* Media query */
  @media screen and (max-width:530px) {
-    .popover {
+    .popover-pane {
         width: 13rem;
         top: 52px;
     }
 
-    .products-types-popover>ol>li {
+    .products-list-popover>ol>li {
         padding: 3px;
         width: 12rem;
     }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SignUpLogin.css"
-import { LoginForm, SignupForm } from "../../component/Auth/SignupLoginForm.js";
+import { LoginForm, SignupForm } from "../../component/Auth/SignupLoginForm";
 import { Link } from "react-router-dom";
 import Headeer from "../../component/Header/Header"
 
